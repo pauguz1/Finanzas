@@ -161,8 +161,8 @@ body {
 #mensaje #close button{
 	background-color: transparent;
 	color: white;
-	border-radius: 5px;
 	border-color: transparent;
+	outline: none;
 	font-size: 24px;
 	margin-left: 0px;
 	height: 100%;

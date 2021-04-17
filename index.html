@@ -72,7 +72,7 @@
 
         <div class="col col-md-12 ">
             <!--<button onclick="window.location.href='balance.html'" class="col-md-12 btn btn-primary" >Ver</button>-->
-            <button onclick="mensaje()" class="col-md-12 btn btn-primary" >Ver</button>
+            <button onclick="crearMensaje('No que muy Verga 😎')" class="col-md-12 btn btn-primary" >Ver</button>
         </div>
         
     </div>
@@ -90,7 +90,7 @@
 
 <div id="mensaje">
   <div>
-    <div id="close"> <Button>X</Button> </div>
+    <div id="close" onclick="closePanel('mensaje')"> <Button>X</Button> </div>
     <p>Este mensaje es con fines informativos</p>
   </div>
 
@@ -113,6 +113,20 @@
   <script src="js/bootstrap.min.js"></script>
 
   <script>
+
+    function crearMensaje(mensaje){
+      var men=document.getElementById("mensaje");
+      men.innerHTML=`
+      <div>
+    <div id="close" onclick="closePanel('mensaje')"> <Button>X</Button> </div>
+    <p>${String(mensaje)}</p>
+  </div>`;
+    }
+
+    function closePanel(ventana){
+      var ventana1=document.getElementById(String(ventana));
+      ventana1.innerHTML=``;
+    }
     var bandera=true;
     function presionado(){
       
