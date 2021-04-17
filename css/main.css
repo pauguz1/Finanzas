@@ -130,48 +130,54 @@ body {
 }
 
 /* Mensaje de advertencia de informacion*/
-#mensaje{
+
+
+.contenedorMensaje{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
-	
-}
-#mensaje div{
-	position: absolute;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
+	align-content: flex-start;
+	background-color: black;
+	position:absolute;
 	height: 45%;
 	width: 25%;
-	background-color: black;
-	bottom: 0px;
-	top: 0px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	margin: auto;
 	border-radius: 10px;
 }
-#mensaje #close {
-	height: 40px;
+
+.close{
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-end;
 	width: 100%;
-	margin-top: 0px;
+	height: 40px;
 }
-#mensaje #close button{
-	background-color: transparent;
-	color: white;
-	border-color: transparent;
-	outline: none;
-	font-size: 24px;
-	margin-left: 0px;
-	height: 100%;
-	width: 40px;
-}
-#mensaje div p{
-	font-size: 23px;
-	color: white;
+.close button{
+	font-size: 30px;
 	text-align: center;
-	padding-left: 10%;
-    padding-right: 10%;
+	outline: none;
+	border-color: transparent;
+	color: white;
+	background-color: transparent;
+}
+.titulo{
+	position: relative;
+	color: white;
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: center;
+	width: 100%;
+}
+.descripcion{
+	position: relative;
+	font-size: 20px;
+	color:white;
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: center;
+	width: 100%;
 }

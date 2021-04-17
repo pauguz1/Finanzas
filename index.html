@@ -26,7 +26,7 @@
   <meta name="theme-color" content="#ffffff">  
 </head>
 
-<body>
+<body onclick="clickBody()">
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     
@@ -72,7 +72,7 @@
 
         <div class="col col-md-12 ">
             <!--<button onclick="window.location.href='balance.html'" class="col-md-12 btn btn-primary" >Ver</button>-->
-            <button onclick="crearMensaje('No que muy Verga 😎')" class="col-md-12 btn btn-primary" >Ver</button>
+            <button onclick="crearMensaje('No que muy Verga 😎','jaja')" class="col-md-12 btn btn-primary" >Ver</button>
         </div>
         
     </div>
@@ -88,10 +88,20 @@
 
 
 
+
+
 <div id="mensaje">
-  <div>
-    <div id="close" onclick="closePanel('mensaje')"> <Button>X</Button> </div>
-    <p>Este mensaje es con fines informativos</p>
+
+  <div class="contenedorMensaje">
+    <div class="close" onclick="closePanel('mensaje')"> <Button>X</Button> </div>
+    <div class="titulo"> <h1>Venta de las cosas de la vida</h1> </div>
+    <div class="descripcion">
+      <p>Este mensaje es con fines informativos
+        Este mensaje es con fines informativos
+        Este mensaje es con fines informativos
+      
+      </p>
+    </div>
   </div>
 
 </div>
@@ -113,13 +123,33 @@
   <script src="js/bootstrap.min.js"></script>
 
   <script>
-
-    function crearMensaje(mensaje){
+    function clickBody(){
+      var men=document.getElementById("mensaje");
+      console.log(men.innerHTML.length);
+      if(men.innerHTML.length==235){
+        men.innerHTML=``;
+      }else{
+        men.innerHTML=`
+      <div class="contenedorMensaje">
+    <div class="close" onclick="closePanel('mensaje')"> <Button>X</Button> </div>
+    <div class="titulo"> <h1>${"hola"}</h1> </div>
+    <div class="descripcion">
+      <p>${"Adios"}</p>
+    </div>
+  </div>`;
+      }
+      console.log("presionado");
+      console.log(men.innerHTML.length);
+    }
+    function crearMensaje(titulo,descripcion){
       var men=document.getElementById("mensaje");
       men.innerHTML=`
-      <div>
-    <div id="close" onclick="closePanel('mensaje')"> <Button>X</Button> </div>
-    <p>${String(mensaje)}</p>
+      <div class="contenedorMensaje">
+    <div class="close" onclick="closePanel('mensaje')"> <Button>X</Button> </div>
+    <div class="titulo"> <h1>${titulo}</h1> </div>
+    <div class="descripcion">
+      <p>${descripcion}</p>
+    </div>
   </div>`;
     }
 
