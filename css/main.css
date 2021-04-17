@@ -128,3 +128,46 @@ body {
 	content: "Hiooao";
 	background-color: blueviolet;
 }
+
+/* Mensaje de advertencia de informacion*/
+#mensaje{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	
+}
+#mensaje div{
+	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 45%;
+	width: 25%;
+	background-color: black;
+	bottom: 0px;
+	top: 0px;
+	margin: auto;
+	border-radius: 10px;
+}
+#mensaje #close {
+	height: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	width: 100%;
+	margin-top: 0px;
+}
+#mensaje #close button{
+	background-color: transparent;
+	color: white;
+	border-radius: 5px;
+	border-color: transparent;
+	font-size: 24px;
+	margin-left: 0px;
+	height: 100%;
+	width: 40px;
+}
+#mensaje div p{
+	color: white;
+}
