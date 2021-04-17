@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/all.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <title>Estado de Resultados</title>
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    
+      <a class="navbar-brand" href="index.html"><img class="iconLabsol" src="images/iconLabsol.png" alt="">Estado Resultados</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barranavegacion" aria-expanded="false" aria-controls="barranavegacion" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="barranavegacion">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="carrera.html">Estado Resultados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="materia.html">Balance</a>
+          </li>           
+        </ul>
+      </div>
+  </nav>
+
+  
+
+
+
+<div id="pasoX">
+
+  <div class="row offset-3 mt-3 col-md-6 justify-content-center">
+    <h1>Ventas</h1>
+  </div>
+  
+  <div class="row pt-4 pb-4 jumbotron offset-3 col-md-6  justify-content-center">
+    
+    <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+      <h5 class="pl-0 pr-0 text-center col-md-4">Devoluciones ventas</h5>
+      <input class="ml-1 mr-1" type="text">
+      <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+    </div>
+  
+    <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+      <h5 class="pl-0 pr-0 text-center col-md-4">Descuentos en ventas</h5>
+      <input class="ml-1 mr-1" type="text">
+      <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+    </div>
+  
+    <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+      <h5 class="pl-0 pr-0 text-center col-md-4">Bonif y reb en ventas</h5>
+      <input class="ml-1 mr-1" type="text">
+      <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+    </div>
+  
+    <div class="row col-md-12 mt-3 mb-3 align-items-center justify-content-center inputDatos">
+      <button class="col-md-3 btn colorSave">Guardar</button>
+    </div>
+  
+    
+  </div>
+
+</div>
+
+<div class="fixed1">
+
+  <div class="contenido borde1" id="paso1" onclick="pasoX1()" ><h1>1</h1></div>
+  <div class="contenido" id="paso2" onclick="pasoX2()"><h1>2</h1></div>
+  <div class="contenido" id="paso3" onclick="pasoX3()"><h1>3</h1></div>
+  <div class="contenido" id="paso4" onclick="pasoX4()"><h1>4</h1></div>
+  <div class="contenido" id="paso5" onclick="pasoX5()"><h1>5</h1></div>
+  <div class="contenido" id="paso6" onclick="pasoX6()"><h1>6</h1></div>
+  <div class="contenido borde2" id="paso7" onclick="pasoX7  ()"><h1>7</h1></div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+  
+  <footer class="mifooter">
+    <div class="container-fluid">
+      <div class="row text-center">
+        <div class="col">
+          <p>Derechos Reservados&reg; 2021</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script>
+    var btn1=document.getElementById('paso1');
+    var btn2=document.getElementById('paso2');
+    var btn3=document.getElementById('paso3');
+    var btn4=document.getElementById('paso4');
+    var btn5=document.getElementById('paso5');
+    var btn6=document.getElementById('paso6');
+    var btn7=document.getElementById('paso7');
+
+    var contenido=document.getElementById('pasoX');
+
+    function pasoX1(){
+      contenido.innerHTML=`
+      <div class="row offset-3 mt-3 col-md-6 justify-content-center">
+    <h1>Ventas</h1>
+  </div>
+  
+  <div class="row pt-4 pb-4 jumbotron offset-3 col-md-6  justify-content-center">
+    
+    <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+      <h5 class="pl-0 pr-0 text-center col-md-4">Devoluciones ventas</h5>
+      <input class="ml-1 mr-1" type="text">
+      <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+    </div>
+  
+    <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+      <h5 class="pl-0 pr-0 text-center col-md-4">Descuentos en ventas</h5>
+      <input class="ml-1 mr-1" type="text">
+      <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+    </div>
+  
+    <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+      <h5 class="pl-0 pr-0 text-center col-md-4">Bonif y reb en ventas</h5>
+      <input class="ml-1 mr-1" type="text">
+      <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+    </div>
+  
+    <div class="row col-md-12 mt-3 mb-3 align-items-center justify-content-center inputDatos">
+      <button class="col-md-3 btn colorSave">Guardar</button>
+    </div>
+  
+    
+  </div>
+      `;
+    }
+
+    function pasoX2(){
+      contenido.innerHTML=`
+      <div class="row offset-3 mt-3 col-md-6 justify-content-center">
+  <h1>inventario inicial mercancia </h1>
+</div>
+
+<div class="row pt-4 pb-4 jumbotron offset-3 col-md-6  justify-content-center">
+  
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h6 class="pl-0 pr-0 text-center col-md-4">compras</h6>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h6 class="pl-0 pr-0 text-center col-md-4">fletes de compras</h6>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h6 class="pl-0 pr-0 text-center col-md-4">gastos de importacion</h6>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-3 mb-3 align-items-center justify-content-center inputDatos">
+    <button class="col-md-3 btn colorSave">Guardar</button>
+  </div>
+
+  
+</div>
+      `;
+    }
+    function pasoX3(){
+      contenido.innerHTML=`
+      <div class="row offset-3 mt-3 col-md-6 justify-content-center">
+  <h1>Monto Total De Compras </h1>
+</div>
+
+<div class="row pt-4 pb-4 jumbotron offset-3 col-md-6  justify-content-center">
+  
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h7 class="pl-0 pr-0 text-center col-md-4">devoluciones en compras</h7>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h7 class="pl-0 pr-0 text-center col-md-4">descuentos en compras</h7>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h7 class="pl-0 pr-0 text-center col-md-4">bonificacion en compras</h7>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h7 class="pl-0 pr-0 text-center col-md-4">compras netas</h7>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h7 class="pl-0 pr-0 text-center col-md-4">mercancia disponible para la venta</h7>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h7 class="pl-0 pr-0 text-center col-md-4">inventario final</h7>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h7 class="pl-0 pr-0 text-center col-md-4">costo de venta</h7>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+  
+  <div class="row col-md-12 mt-3 mb-3 align-items-center justify-content-center inputDatos">
+    <button class="col-md-3 btn colorSave">Guardar</button>
+  </div>
+
+  
+</div>
+      `;
+    }
+    function pasoX4(){
+      contenido.innerHTML=`
+      <div class="row offset-3 mt-3 col-md-6 justify-content-center">
+  <h1>Gastos de ventas </h1>
+</div>
+
+<div class="row pt-4 pb-4 jumbotron offset-3 col-md-6  justify-content-center">
+  
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h8 class="pl-0 pr-0 text-center col-md-4">sueldo  de vendedore</h8>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h8 class="pl-0 pr-0 text-center col-md-4">comisiones sobre venta</h8>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h8 class="pl-0 pr-0 text-center col-md-4">propaganda</h8>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h8 class="pl-0 pr-0 text-center col-md-4">impuesto municipales</h8>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h8 class="pl-0 pr-0 text-center col-md-4">total de gastos de ventas</h8>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+
+  <div class="row col-md-12 mt-3 mb-3 align-items-center justify-content-center inputDatos">
+    <button class="col-md-3 btn colorSave">Guardar</button>
+  </div>
+
+  
+</div>
+      `;
+    }
+    function pasoX5(){
+      contenido.innerHTML=`
+      <div class="row offset-3 mt-3 col-md-6 justify-content-center">
+  <h1>Gastos administrativos </h1>
+</div>
+
+<div class="row pt-4 pb-4 jumbotron offset-3 col-md-6  justify-content-center">
+  
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h8 class="pl-0 pr-0 text-center col-md-4">gastos de alquiler</h8>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h8 class="pl-0 pr-0 text-center col-md-4">gasto generales</h8>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h8 class="pl-0 pr-0 text-center col-md-4">sueldo de los de administracion</h8>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h8 class="pl-0 pr-0 text-center col-md-4">perdidasen cuentas malas</h8>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h8 class="pl-0 pr-0 text-center col-md-4">total de gastos de administracion</h8>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+
+  <div class="row col-md-12 mt-3 mb-3 align-items-center justify-content-center inputDatos">
+    <button class="col-md-3 btn colorSave">Guardar</button>
+  </div>
+
+  
+</div>
+      `;
+    }
+    function pasoX6(){
+      contenido.innerHTML=`
+      <div class="row offset-3 mt-3 col-md-6 justify-content-center">
+  <h1>Otros Ingresos </h1>
+</div>
+
+<div class="row pt-4 pb-4 jumbotron offset-3 col-md-6  justify-content-center">
+  
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h9 class="pl-0 pr-0 text-center col-md-4">alquileres ganados</h9>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h9 class="pl-0 pr-0 text-center col-md-4">intereses ganadoas</h9>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h9 class="pl-0 pr-0 text-center col-md-4">comisiones ganados</h9>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h9 class="pl-0 pr-0 text-center col-md-4">Total de ingresos</h9>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+
+  <div class="row col-md-12 mt-3 mb-3 align-items-center justify-content-center inputDatos">
+    <button class="col-md-3 btn colorSave">Guardar</button>
+  </div>
+
+  
+</div>
+      `;
+    }
+    function pasoX7(){
+      contenido.innerHTML=`
+      <div class="row offset-3 mt-3 col-md-6 justify-content-center">
+  <h1>Otros Engresos </h1>
+</div>
+
+<div class="row pt-4 pb-4 jumbotron offset-3 col-md-6  justify-content-center">
+  
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h10 class="pl-0 pr-0 text-center col-md-4">intereses gastos</h10>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h10 class="pl-0 pr-0 text-center col-md-4">perdidas en ventas</h10>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-1 mb-1 align-items-center justify-content-center inputDatos">
+    <h10 class="pl-0 pr-0 text-center col-md-4">total de otros egresos</h10>
+    <input class="ml-1 mr-1" type="text">
+    <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+  </div>
+
+  <div class="row col-md-12 mt-3 mb-3 align-items-center justify-content-center inputDatos">
+    <button class="col-md-3 btn colorSave">Guardar</button>
+  </div>
+</div>
+      `;
+    }
+  
+
+
+  </script>
+</body>
+
+</html>
