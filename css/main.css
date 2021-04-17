@@ -135,10 +135,10 @@ body {
 .contenedorMensaje{
 	display: flex;
 	flex-wrap: wrap;
-	align-content: flex-start;
-	background-color: black;
+	align-content: space-between;
+	background-color: gray;
 	position:absolute;
-	height: 45%;
+	height: 50%;
 	width: 25%;
 	top: 0;
 	bottom: 0;
@@ -181,3 +181,17 @@ body {
 	text-align: center;
 	width: 100%;
 }
+.video{
+	position: relative;
+	width: 100%;
+	height: auto;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 10%;
+	border-radius: 10px;
+}
+
