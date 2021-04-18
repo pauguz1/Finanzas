@@ -26,7 +26,7 @@
   <meta name="theme-color" content="#ffffff">  
 </head>
 
-<body >
+<body>
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     
@@ -92,7 +92,25 @@
 <!--  Este es el contenedor del mensaje -->
 <div id="mensaje">
 
-  <div class="contenedorMensaje">
+  <div class="fondo">
+    <div class="contenedorMensaje">
+      <div class="close" onclick="closePanel('mensaje')"> <Button>X</Button> </div>
+      <div class="titulo"> <h1>Venta de las cosas de la vida</h1> </div>
+      <div class="descripcion">
+        <p>Este mensaje es con fines informativos
+          Este mensaje es con fines informativos
+          Este mensaje es con fines informativos
+        
+        </p>
+      </div>
+        <iframe class="video" src="https://www.youtube.com/embed/LBagGr5iFHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+  <!--
+
+
+
+    <div class="contenedorMensaje">
     <div class="close" onclick="closePanel('mensaje')"> <Button>X</Button> </div>
     <div class="titulo"> <h1>Venta de las cosas de la vida</h1> </div>
     <div class="descripcion">
@@ -104,6 +122,7 @@
     </div>
       <iframe class="video" src="https://www.youtube.com/embed/LBagGr5iFHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
+  -->
 
 </div>
 <!--  FIN contenedor del mensaje -->
@@ -133,13 +152,15 @@
         men.innerHTML=``;
       }else{
         men.innerHTML=`
+        <div class="fondo">
       <div class="contenedorMensaje">
     <div class="close" onclick="closePanel('mensaje')"> <Button>X</Button> </div>
     <div class="titulo"> <h1>${"hola"}</h1> </div>
     <div class="descripcion">
       <p>${"Adios"}</p>
     </div>
-  </div>`;
+  </div>
+</div>`;
       }
       console.log("presionado");
       console.log(men.innerHTML.length);
@@ -149,13 +170,14 @@
     function crearMensaje(titulo,descripcion){
       var men=document.getElementById("mensaje");
       men.innerHTML=`
+      <div class="fondo">
       <div class="contenedorMensaje">
     <div class="close" onclick="closePanel('mensaje')"> <Button>X</Button> </div>
     <div class="titulo"> <h1>${titulo}</h1> </div>
     <div class="descripcion">
       <p>${descripcion}</p>
     </div>
-  </div>`;
+  </div></div>`;
     }
 
     function closePanel(ventana){
