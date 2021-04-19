@@ -26,9 +26,9 @@
   <meta name="theme-color" content="#ffffff">  
 </head>
 
-<body id="bodu">
+<body id="bodu" >
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" >
     
       <a class="navbar-brand" href="index.html"><img class="iconLabsol" src="images/iconLabsol.png" alt="">Estado Resultados</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barranavegacion" aria-expanded="false" aria-controls="barranavegacion" aria-label="Toggle navigation">
@@ -113,7 +113,7 @@
 
 
   
-  <footer class="mifooter">
+  <footer class="mifooter" >
     <div class="container-fluid">
       <div class="row text-center">
         <div class="col">
@@ -154,20 +154,22 @@
     function crearMensaje1(id,titulo){
       var men=document.getElementById("bodu");
       men.innerHTML+=`
-      <div id="${id}" class="fondo">
+      <div id="${id}" class="fondo" onkeydown="borrar('${id}')" tabindex="-1">
       <div class="contenedorMensaje">
     <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
     <div class="titulo"> <h1>${titulo}</h1> </div>
     <div class="descripcion">
     </div>
   </div></div>`;
+  var elemento=document.getElementById(String(id));
+  elemento.focus();
     }
 
     /* Crea un mensaje con titulo y descipcion */
     function crearMensaje2(id,titulo,descripcion){
       var men=document.getElementById("bodu");
       men.innerHTML+=`
-      <div id="${id}" class="fondo">
+      <div id="${id}" class="fondo" onkeydown="borrar('${id}')" tabindex="-1">
       <div class="contenedorMensaje">
     <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
     <div class="titulo"> <h1>${titulo}</h1> </div>
@@ -175,14 +177,16 @@
       <p>${descripcion}</p>
     </div>
   </div></div>`;
+  var elemento=document.getElementById(String(id));
+  elemento.focus();
     }
 
     /* Crea un mensaje con titulo, descripcion y Video */
     function crearMensaje3(id,titulo,descripcion,urlVideo){
       var men=document.getElementById("bodu");
       men.innerHTML+=`
-      <div id="${id}" class="fondo">
-      <div class="contenedorMensaje">
+      <div id="${id}" class="fondo" onkeydown="borrar('${id}')" tabindex="-1">
+      <div class="contenedorMensaje" >
     <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
     <div class="titulo"> <h1>${titulo}</h1> </div>
     <div class="descripcion">
@@ -190,6 +194,10 @@
     </div>
     <iframe class="video" src="${urlVideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div></div>`;
+  var elemento=document.getElementById(String(id));
+  elemento.focus();
+
+
     }
 
 
@@ -210,6 +218,19 @@
         bandera=true;
       }
     }
+
+
+      function borrar(id){
+        console.log(window.event.code);
+        var tecla=window.event.code;
+        if (tecla === 'Escape' || tecla === 27) {
+         closePanel(id);
+       }
+      }
+
+   
+      
+    
   
 
     crearMensaje3("p1","Ventas","informacion sobre ventas","https://www.youtube.com/embed/LBagGr5iFHU")
