@@ -219,4 +219,14 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-
+body{
+	background-color: #1e262e;
+	color: white;
+}
+.dark{
+	background-color: #2e3945;
+	color: white;
+}
+.black{
+	background-color: #0a0c0f;
+}
