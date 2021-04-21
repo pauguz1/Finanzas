@@ -26,7 +26,7 @@
   <meta name="theme-color" content="#ffffff">  
 </head>
 
-<body>
+<body id="bodu">
 
   <nav class="navbar navbar-expand-md navbar-dark  fixed-top black">
     
@@ -77,7 +77,7 @@
     </div>
   
     <div class="row col-md-12 mt-3 mb-3 align-items-center justify-content-center inputDatos">
-      <button class="col-md-3 btn colorSave">Guardar</button>
+      <button class="col-md-3 btn colorSave" onclick="crearMensaje1('1','p1')">Guardar</button>
     </div>
   
     
@@ -105,15 +105,15 @@
 
 
   
-  <footer class="mifooter dark">
-    <div class="container-fluid">
-      <div class="row text-center">
-        <div class="col">
-          <p>Derechos Reservados&reg; 2021</p>
-        </div>
+<footer class="mifooter dark" >
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="col">
+        <p class="mb-2 mt-2">Derechos Reservados Paul Alejandro Santana Guzmán &reg; 2021</p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -128,7 +128,88 @@
     var btn7=document.getElementById('paso7');
 
     var contenido=document.getElementById('pasoX');
+    //----------------- Mensajes en pantalla    -------------------------------------------------------------------------
 
+
+    /* Crea un mensaje con titulo, descripcion y Video */
+    /* Crea un mensaje con solo el titulo */
+    function crearMensaje1(id,titulo){
+      var men=document.getElementById("bodu");
+      men.innerHTML+=`
+      <div id="${id}" class="fondo d-flex justify-content-center" onkeydown="borrar('${id}')" tabindex="-1">
+      <div class="contenedorMensaje col-sm-12 col-md-4 ml-2 mr-2  d-flex justify-content-center">
+    <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
+    <div class="titulo"> <h1>${titulo}</h1> </div>
+    <div class="descripcion">
+    </div>
+  </div></div>`;
+  var elemento=document.getElementById(String(id));
+  elemento.focus();
+    }
+
+    /* Crea un mensaje con titulo y descipcion */
+    function crearMensaje2(id,titulo,descripcion){
+      var men=document.getElementById("bodu");
+      men.innerHTML+=`
+      <div id="${id}" class="fondo d-flex justify-content-center" onkeydown="borrar('${id}')" tabindex="-1">
+      <div class="contenedorMensaje col-sm-12 col-md-4 ml-2 mr-2  d-flex justify-content-center">
+    <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
+    <div class="titulo"> <h1>${titulo}</h1> </div>
+    <div class="descripcion">
+      <p>${descripcion}</p>
+    </div>
+  </div></div>`;
+  var elemento=document.getElementById(String(id));
+  elemento.focus();
+    }
+
+    /* Crea un mensaje con titulo, descripcion y Video */
+    function crearMensaje3(id,titulo,descripcion,urlVideo){
+      var men=document.getElementById("bodu");
+      men.innerHTML+=`
+      <div id="${id}" class="fondo d-flex justify-content-center" onkeydown="borrar('${id}')" tabindex="-1">
+      <div class="contenedorMensaje col-sm-12 col-md-4 ml-2 mr-2  d-flex justify-content-center">
+    <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
+    <div class="titulo"> <h1>${titulo}</h1> </div>
+    <div class="descripcion">
+      <p>${descripcion}</p>
+    </div>
+    <iframe class="video" src="${urlVideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div></div>`;
+  var elemento=document.getElementById(String(id));
+  elemento.focus();
+
+
+    }
+
+
+/** Eliminar el Nodo */
+    function closePanel(ventana){
+      var ventana1=document.getElementById(String(ventana));
+      ventana1.remove();
+    }
+    var bandera=true;
+    function presionado(){
+      
+      var boton=document.getElementById('paso1');
+      if(Boolean(bandera)){
+        boton.innerHTML=`<h1>Ventas</h1>`;
+        bandera=false;
+      }else{
+        boton.innerHTML=`<h1>1</h1>`;
+        bandera=true;
+      }
+    }
+
+
+      function borrar(id){
+        console.log(window.event.code);
+        var tecla=window.event.code;
+        if (tecla === 'Escape' || tecla === 27) {
+         closePanel(id);
+       }
+      }
+//-------------------------------------------------------------------------------------------------------------------------------
     function pasoX1(){
       contenido.innerHTML=`
       <div class="row offset-3 mt-3 col-md-6 justify-content-center">
@@ -425,7 +506,7 @@
       `;
     }
   
-
+    crearMensaje3("p1","Ventas","informacion referente a ventas","https://www.youtube.com/embed/LBagGr5iFHU");
 
   </script>
 </body>

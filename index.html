@@ -28,7 +28,7 @@
 
 <body id="bodu" >
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" >
+  <nav class="navbar navbar-expand-md navbar-dark black fixed-top" >
     
       <a class="navbar-brand" href="index.html"><img class="iconLabsol" src="images/iconLabsol.png" alt="">Finanzas</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barranavegacion" aria-expanded="false" aria-controls="barranavegacion" aria-label="Toggle navigation">
@@ -46,113 +46,234 @@
       </div>
   </nav>
 
-  <main class="container offset-3 col-md-6">
-    <div class="row col-md-12 mt-5 justify-content-center ">
+  
+<div class="col-md-12 d-flex justify-content-center mt-5 mb-5">
+  <div class="col-md-10  col-sm-12   pl-0 pr-0 d-flex justify-content-center fw-wrap">
 
-      <div class="row jumbotron col-md-5 ml-2 mr-2">
-        <div class="col col-md-12">
-          <h1 class="col col-md-12">Estado de Resultados</h1>
-        </div>
-          <div class="col col-md-12 mt-2 mb-2 ">
-            <img class="col-md-12 rounded-circle" src="images/grafica.png" alt="">
-          </div>
-
-          <div class="col col-md-12 ">
-              <button onclick="window.location.href='estadoResultados.html'" class="col-md-12 btn btn-primary">Ver</button>
-          </div>
+    <div class="col-md-4 dark rounded ml-1 mr-1 pl-0 pr-0 mt-2 mb-2">
+      <div class="col-md-12 mt-1 mb-1"><h1 class="text-center">Estado Resultados</h1></div>
+    <div class="col-md-12 d-flex justify-content-center mt-1 mb-1"><button onclick="crearMensaje1('hola')" class="btn btn-info col-md-12 ml-2 mr-2 pl-0 pr-0">Crear Nuevo</button></div>
+    <div id="tableEstadoResultados" class="col-md-12 mt-1 mb-1  ">
+  
+      <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between campo"> 
+        <input type="date">
+        <li class="fas fa-trash delete d-flex align-items-center" title="Eliminar"></li>
+        <li class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
+        <li class="fas fa-eye d-flex align-items-center watch" title="Ver"></li>
+      </div>
+      <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between campo"> 
+        <input type="date">
+        <li class="fas fa-trash delete d-flex align-items-center" title="Eliminar"></li>
+        <li class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
+        <li class="fas fa-eye d-flex align-items-center watch" title="Ver"></li>
+      </div>
+      <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between campo"> 
+        <input type="date">
+        <li class="fas fa-trash delete d-flex align-items-center" title="Eliminar"></li>
+        <li class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
+        <li class="fas fa-eye d-flex align-items-center watch" title="Ver"></li>
+      </div>
+      
+    </div>
+    </div>
+  
+    <div class="col-md-4   dark rounded ml-1 mr-1 pl-0 pr-0 mt-2 mb-2">
+      <div class="col-md-12 mt-1 mb-1"><h1 class="text-center">Balance</h1></div>
+    <div class="col-md-12 d-flex justify-content-center mt-1 mb-1"><button class="btn btn-info col-md-12 ml-2 mr-2 pl-0 pr-0">Crear Nuevo</button></div>
+    <div id="tableEstadoResultados" class="col-md-12 mt-1 mb-1 ">
+  
+      <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between campo"> 
+        <input type="date">
+        <li class="fas fa-trash delete d-flex align-items-center" title="Eliminar"></li>
+        <li class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
+        <li class="fas fa-eye d-flex align-items-center watch" title="Ver"></li>
       </div>
   
-      <div class="row jumbotron col-md-5 ml-2 mr-2">
-        <div class="col col-md-12">
-          <h1 class="col col-md-12 ">Balance</h1>
-        </div>
-        <div class="col col-md-12 mt-2 mb-2">
-          <img class="col-md-12 rounded-circle" src="images/grafica.png" alt="">
-        </div>
-
-        <div class="col col-md-12 ">
-            <!--<button onclick="window.location.href='balance.html'" class="col-md-12 btn btn-primary" >Ver</button>-->
-            <button onclick="crearMensaje2('paul','No que muy Pro 😎','Holi')" class="col-md-12 btn btn-primary" >Ver</button>
-        </div>
-        
     </div>
-
     </div>
     
-</main>
+  </div>
+</div>
 
 
 
 
 
+<div class="col-md-12 d-flex justify-content-center">
+  <div class="col-md-10  d-flex justify-content-center fw-wrap">
 
+    <div class="col-md-5 col-sm-12 dark ml-2 mr-2 mt-3 mb-3 rounded">
+      <div class="row  mt-3 col-md-12 d-flex justify-content-center text-center">
+        <h1 class="col-md-12">Estado de resultados</h1>
+      </div>
+      
+      
+       <div class="row pt-1 pb-1 dark ml-0 col-md-12 d-flex  justify-content-center ">
+        <div class="row col-md-12 mt-3 mb-3 d-flex align-items-center justify-content-center inputDatos">
+            <button class="col-md-8 btn colorSave">Crear Nuevo</button>
+        </div>
+        
+        <table class="table col-md-12 ">
+          
+      
+          <tbody>
+            <tr>
+              <th scospe="row">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <input type="date" id="inputDate" class="form-control mx-sm-3" >
+                  </div>
+                </form>
+              </th>
+            
+              <td>
+                <button class="col-md-10 btn colorSave">Crear</button>
+              </td>
+              <td>
+                <button class="col-md-10 btn colorSave" style="background-color: red">Ver</button>
+              </td>
+      
+              <td><button class="col-md-10 btn colorSave" style="background-color: green">Borrar</button></td>
+            </tr>
+      
+            <tbody>
+              <tr>
+                <th scospe="row">
+                  <form class="form-inline">
+                    <div class="form-group">
+                      <input type="date" id="inputPassword6" class="form-control mx-sm-3" >
+                      
+                    </div>
+                  </form>
+                </th>
+                <td>
+                  <button class="col-md-10 btn colorSave">Crear</button>
+                </td>
+                <td>
+                  <button class="col-md-10 btn colorSave" style="background-color: red">Ver</button>
+                </td>
+      
+                <td><button class="col-md-10 btn colorSave" style="background-color: green">Borrar</button></td>
+              </tr>
+      
+              <tr>
+                <tbody>
+                  <tr>
+                    <th scospe="row">
+                      <form class="form-inline">
+                        <div class="form-group">
+                          <input type="date" id="inputPassword6" class="form-control mx-sm-3" >
+                      
+                        </div>
+                      </form>
+                    </th>
+                    <td>
+                      <button class="col-md-10 btn colorSave">Crear</button>
+                    </td>
+                    <td>
+                      <button class="col-md-10 btn colorSave" style="background-color: red">Ver</button>
+                    </td>
+          
+                    <td><button class="col-md-10 btn colorSave" style="background-color: green">Borrar</button></td>
+                  </tr>
+          
+                  <tr>
+          </tbody>
+        </table>
+       </div>
 
-
-
-
-
-
-
-
-
-
-<div class="row offset-3 col-md-6  pl-0 pr-0 d-flex justify-content-between">
-
-  <div class="col-md-6 black rounded pl-0 pr-0">
-    <div class="col-md-12 mt-1 mb-1"><h1 class="text-center">Estado Resultados</h1></div>
-  <div class="col-md-12 d-flex justify-content-center mt-1 mb-1"><button class="btn btn-info col-md-12 ml-2 mr-2 pl-0 pr-0">Crear Nuevo</button></div>
-  <div id="tableEstadoResultados" class="col-md-12 mt-1 mb-1 ">
-
-    <div class="col-md-12 mt-1 mb-1 d-flex justify-content-between"> 
-      <input type="date">
-      <button class="btn btn-danger">Borrar</button>
-      <button class="btn btn-success">Actualizar</button>
-      <button class="btn btn-info">Ver</button>
     </div>
-  </div>
-  </div>
+
+    <div class="col-md-5 col-sm-12 dark ml-2 mr-2 mt-3 mb-3 rounded">
+      <div class="row  mt-3 col-md-12 d-flex justify-content-center text-center">
+        <h1 class="col-md-12">Estado de resultados</h1>
+      </div>
+      
+      
+       <div class="row pt-1 pb-1 dark  ml-0 col-md-12 d-flex  justify-content-center ">
+        <div class="row col-md-12 mt-3 mb-3 align-items-center justify-content-center
+             inputDatos">
+            <button class="col-md-8 btn colorSave">Crear Nuevo</button>
+        </div>
+        
+        <table class="table col-md-12">
+          
+      
+          <tbody>
+            <tr>
+              <th scospe="row">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <input type="date" id="inputDate" class="form-control mx-sm-3" >
+                  </div>
+                </form>
+              </th>
+            
+              <td>
+                <button class="col-md-10 btn colorSave">Crear</button>
+              </td>
+              <td>
+                <button class="col-md-10 btn colorSave" style="background-color: red">Ver</button>
+              </td>
+      
+              <td><button class="col-md-10 btn colorSave" style="background-color: green">Borrar</button></td>
+            </tr>
+      
+            <tbody>
+              <tr>
+                <th scospe="row">
+                  <form class="form-inline">
+                    <div class="form-group">
+                      <input type="date" id="inputPassword6" class="form-control mx-sm-3" >
+                      
+                    </div>
+                  </form>
+                </th>
+                <td>
+                  <button class="col-md-10 btn colorSave">Crear</button>
+                </td>
+                <td>
+                  <button class="col-md-10 btn colorSave" style="background-color: red">Ver</button>
+                </td>
+      
+                <td><button class="col-md-10 btn colorSave" style="background-color: green">Borrar</button></td>
+              </tr>
+      
+              <tr>
+                <tbody>
+                  <tr>
+                    <th scospe="row">
+                      <form class="form-inline">
+                        <div class="form-group">
+                          <input type="date" id="inputPassword6" class="form-control mx-sm-3" >
+                      
+                        </div>
+                      </form>
+                    </th>
+                    <td>
+                      <button class="col-md-10 btn colorSave">Crear</button>
+                    </td>
+                    <td>
+                      <button class="col-md-10 btn colorSave" style="background-color: red">Ver</button>
+                    </td>
+          
+                    <td><button class="col-md-10 btn colorSave" style="background-color: green">Borrar</button></td>
+                  </tr>
+          
+                  <tr>
+          </tbody>
+        </table>
+       </div>
 
 
-  <div class="col-md-6 black rounded pl-0 pr-0">
-    <div class="col-md-12 mt-1 mb-1"><h1 class="text-center">Estado Resultados</h1></div>
-  <div class="col-md-12 d-flex justify-content-center mt-1 mb-1"><button class="btn btn-info col-md-12 ml-2 mr-2 pl-0 pr-0">Crear Nuevo</button></div>
-  <div id="tableEstadoResultados" class="col-md-12 mt-1 mb-1 ">
-
-    <div class="col-md-12 mt-1 mb-1 d-flex justify-content-between"> 
-      <input type="date">
-      <button class="btn btn-danger">Borrar</button>
-      <button class="btn btn-success">Actualizar</button>
-      <button class="btn btn-info">Ver</button>
     </div>
-  </div>
-  </div>
+  
 
+  </div>
 </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-<div class="row offset-3 col-md-6">
-  <div class="col-md-12"><h1 class="text-center">Estado Resultados</h1></div>
-  <div class="col-md-12"><button class="btn btn-info col-md-12">Crear Nuevo</button></div>
-  <div id="tableEstadoResultados" class="col-md-12">
-    <div class="col-md-12"> 
-      <input type="date">
-      <button class="btn btn-danger">Borrar</button>
-      <button class="btn btn-success">Actualizar</button>
-      <button class="btn btn-info">Ver</button>
-    </div>
-  </div>
-</div>
 
 
 
@@ -188,7 +309,7 @@
     <div class="container-fluid">
       <div class="row text-center">
         <div class="col">
-          <p>Derechos Reservados Paul Alejandro Santana Guzmán &reg; 2021</p>
+          <p class="mb-2 mt-2">Derechos Reservados Paul Alejandro Santana Guzmán &reg; 2021</p>
         </div>
       </div>
     </div>
@@ -225,8 +346,8 @@
     function crearMensaje1(id,titulo){
       var men=document.getElementById("bodu");
       men.innerHTML+=`
-      <div id="${id}" class="fondo" onkeydown="borrar('${id}')" tabindex="-1">
-      <div class="contenedorMensaje">
+      <div id="${id}" class="fondo d-flex justify-content-center" onkeydown="borrar('${id}')" tabindex="-1">
+      <div class="contenedorMensaje col-sm-12 col-md-4 ml-2 mr-2  d-flex justify-content-center">
     <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
     <div class="titulo"> <h1>${titulo}</h1> </div>
     <div class="descripcion">
@@ -240,8 +361,8 @@
     function crearMensaje2(id,titulo,descripcion){
       var men=document.getElementById("bodu");
       men.innerHTML+=`
-      <div id="${id}" class="fondo" onkeydown="borrar('${id}')" tabindex="-1">
-      <div class="contenedorMensaje">
+      <div id="${id}" class="fondo d-flex justify-content-center" onkeydown="borrar('${id}')" tabindex="-1">
+      <div class="contenedorMensaje col-sm-12 col-md-4 ml-2 mr-2  d-flex justify-content-center">
     <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
     <div class="titulo"> <h1>${titulo}</h1> </div>
     <div class="descripcion">
@@ -256,8 +377,8 @@
     function crearMensaje3(id,titulo,descripcion,urlVideo){
       var men=document.getElementById("bodu");
       men.innerHTML+=`
-      <div id="${id}" class="fondo" onkeydown="borrar('${id}')" tabindex="-1">
-      <div class="contenedorMensaje" >
+      <div id="${id}" class="fondo d-flex justify-content-center" onkeydown="borrar('${id}')" tabindex="-1">
+      <div class="contenedorMensaje col-sm-12 col-md-4 ml-2 mr-2  d-flex justify-content-center">
     <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
     <div class="titulo"> <h1>${titulo}</h1> </div>
     <div class="descripcion">

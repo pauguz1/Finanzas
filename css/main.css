@@ -138,13 +138,13 @@ body {
 	flex-wrap: wrap;
 	align-content: space-between;
 	background-color: black;
-	height: 50%;
-	width: 25%;
-	top: 0;
+	/*height: 50%;
+	width: 25%;*/
+	/*top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	margin: auto;
+	margin: auto;*/
 	border-radius: 10px;
 }
 /*.contenedorMensaje::after{
@@ -229,4 +229,36 @@ body{
 }
 .black{
 	background-color: #0a0c0f;
+}
+.white{
+	background-color: white;
+	color: black;
+}
+
+.delete{
+	cursor: pointer;
+	color: red;
+	font-size: 25px;
+}
+.watch{
+	cursor: pointer;
+	color: #5AB2FF;
+	font-size: 25px;;
+}
+.update{
+	cursor: pointer;
+	color: green;
+	font-size: 25px;;
+}
+.fw-wrap{
+	flex-wrap: wrap;
+}
+.border1{
+	border: 1px solid #5e6772;
+	border-left: none;
+	border-right: none;
+}
+.campo{
+	background-color: #374452;
+	border-radius: 5px;
 }
