@@ -264,3 +264,7 @@ body{
 .boton{
 	border-radius: 20px;
 }
+/* poner la barra lateral del mensaje al frente de todo */
+.front{
+	z-index: 3;
+}
