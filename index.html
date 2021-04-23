@@ -52,25 +52,25 @@
 
     <div class="col-md-4 dark rounded ml-1 mr-1 pl-0 pr-0 mt-2 mb-2">
       <div class="col-md-12 mt-1 mb-1"><h1 class="text-center">Estado Resultados</h1></div>
-    <div class="col-md-12 d-flex justify-content-center mt-1 mb-1"><button onclick="crearMensaje1('hola')" class="btn btn-info col-md-12 ml-2 mr-2 pl-0 pr-0 boton">Crear Nuevo</button></div>
+    <div class="col-md-12 d-flex justify-content-center mt-1 mb-1"><button id="agregar" class="btn btn-info col-md-12 ml-2 mr-2 pl-0 pr-0 boton">Crear Nuevo</button></div>
     <div id="tableEstadoResultados" class="col-md-12 mt-1 mb-1  ">
   
       <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between campo"> 
         <input type="date">
         <li class="fas fa-trash delete d-flex align-items-center" title="Eliminar"></li>
-        <li class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
+        <li onclick="mostrarPaso('1','paso1')" class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
         <li class="fas fa-eye d-flex align-items-center watch" title="Ver"></li>
       </div>
       <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between campo"> 
         <input type="date">
         <li class="fas fa-trash delete d-flex align-items-center" title="Eliminar"></li>
-        <li class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
+        <li onclick="mostrarPaso('1','paso1')" class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
         <li class="fas fa-eye d-flex align-items-center watch" title="Ver"></li>
       </div>
       <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between campo"> 
         <input type="date">
         <li class="fas fa-trash delete d-flex align-items-center" title="Eliminar"></li>
-        <li class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
+        <li onclick="mostrarPaso('1','paso1')" class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
         <li class="fas fa-eye d-flex align-items-center watch" title="Ver"></li>
       </div>
       
@@ -85,7 +85,7 @@
       <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between campo"> 
         <input type="date">
         <li class="fas fa-trash delete d-flex align-items-center" title="Eliminar"></li>
-        <li class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
+        <li onclick="mostrarPaso('p','paso1')" class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
         <li class="fas fa-eye d-flex align-items-center watch" title="Ver"></li>
       </div>
   
@@ -121,7 +121,7 @@
               <th scospe="row">
                 <form class="form-inline">
                   <div class="form-group">
-                    <input type="date" id="inputDate" class="form-control mx-sm-3" >
+                    <input type="date" id="inputDate1" class="form-control mx-sm-3" >
                   </div>
                 </form>
               </th>
@@ -141,7 +141,7 @@
                 <th scospe="row">
                   <form class="form-inline">
                     <div class="form-group">
-                      <input type="date" id="inputPassword6" class="form-control mx-sm-3" >
+                      <input type="date" id="inputPassword1" class="form-control mx-sm-3" >
                       
                     </div>
                   </form>
@@ -162,7 +162,7 @@
                     <th scospe="row">
                       <form class="form-inline">
                         <div class="form-group">
-                          <input type="date" id="inputPassword6" class="form-control mx-sm-3" >
+                          <input type="date" id="inputPassword2" class="form-control mx-sm-3" >
                       
                         </div>
                       </form>
@@ -224,7 +224,7 @@
                 <th scospe="row">
                   <form class="form-inline">
                     <div class="form-group">
-                      <input type="date" id="inputPassword6" class="form-control mx-sm-3" >
+                      <input type="date" id="inputPassword3" class="form-control mx-sm-3" >
                       
                     </div>
                   </form>
@@ -245,7 +245,7 @@
                     <th scospe="row">
                       <form class="form-inline">
                         <div class="form-group">
-                          <input type="date" id="inputPassword6" class="form-control mx-sm-3" >
+                          <input type="date" id="inputPassword4" class="form-control mx-sm-3" >
                       
                         </div>
                       </form>
@@ -318,120 +318,8 @@
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 
-  <script>
-
-    function clickBody(){
-      var men=document.getElementById("mensaje");
-      console.log(men.innerHTML.length);
-      if(men.innerHTML.length==235){
-        men.remove();
-      }else{
-        men.innerHTML=`
-        <div id="mensaje" class="fondo">
-      <div class="contenedorMensaje">
-    <div class="close"> <Button onclick="closePanel('mensaje')">X</Button> </div>
-    <div class="titulo"> <h1>${"hola"}</h1> </div>
-    <div class="descripcion">
-      <p>${"Adios"}</p>
-    </div>
-  </div>
-</div>`;
-      }
-      console.log("presionado");
-      console.log(men.innerHTML.length);
-    }
-
-    
-    /* Crea un mensaje con solo el titulo */
-    function crearMensaje1(id,titulo){
-      var men=document.getElementById("bodu");
-      men.innerHTML+=`
-      <div id="${id}" class="fondo d-flex justify-content-center" onkeydown="borrar('${id}')" tabindex="-1">
-      <div class="contenedorMensaje col-sm-12 col-md-4 ml-2 mr-2  d-flex justify-content-center">
-    <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
-    <div class="titulo"> <h1>${titulo}</h1> </div>
-    <div class="descripcion">
-    </div>
-  </div></div>`;
-  var elemento=document.getElementById(String(id));
-  elemento.focus();
-    }
-
-    /* Crea un mensaje con titulo y descipcion */
-    function crearMensaje2(id,titulo,descripcion){
-      var men=document.getElementById("bodu");
-      men.innerHTML+=`
-      <div id="${id}" class="fondo d-flex justify-content-center" onkeydown="borrar('${id}')" tabindex="-1">
-      <div class="contenedorMensaje col-sm-12 col-md-4 ml-2 mr-2  d-flex justify-content-center">
-    <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
-    <div class="titulo"> <h1>${titulo}</h1> </div>
-    <div class="descripcion">
-      <p>${descripcion}</p>
-    </div>
-  </div></div>`;
-  var elemento=document.getElementById(String(id));
-  elemento.focus();
-    }
-
-    /* Crea un mensaje con titulo, descripcion y Video */
-    function crearMensaje3(id,titulo,descripcion,urlVideo){
-      var men=document.getElementById("bodu");
-      men.innerHTML+=`
-      <div id="${id}" class="fondo d-flex justify-content-center" onkeydown="borrar('${id}')" tabindex="-1">
-      <div class="contenedorMensaje col-sm-12 col-md-4 ml-2 mr-2  d-flex justify-content-center">
-    <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
-    <div class="titulo"> <h1>${titulo}</h1> </div>
-    <div class="descripcion">
-      <p>${descripcion}</p>
-    </div>
-    <iframe class="video" src="${urlVideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div></div>`;
-  var elemento=document.getElementById(String(id));
-  elemento.focus();
-
-
-    }
-
-
-/** Eliminar el Nodo */
-    function closePanel(ventana){
-      var ventana1=document.getElementById(String(ventana));
-      ventana1.remove();
-    }
-    var bandera=true;
-    function presionado(){
-      
-      var boton=document.getElementById('paso1');
-      if(Boolean(bandera)){
-        boton.innerHTML=`<h1>Ventas</h1>`;
-        bandera=false;
-      }else{
-        boton.innerHTML=`<h1>1</h1>`;
-        bandera=true;
-      }
-    }
-
-
-      function borrar(id){
-        console.log(window.event.code);
-        var tecla=window.event.code;
-        if (tecla === 'Escape' || tecla === 27) {
-         closePanel(id);
-       }
-      }
-
-
-      /** mensaje para llenar formuario */
-      
-
-   
-      
-    
-  
-
-    //crearMensaje3("p1","Ventas","informacion referente a ventas","https://www.youtube.com/embed/LBagGr5iFHU")
-    
-  </script>
+  <script src="js/control.js"></script>
+  <script src="js/actualizar.js"></script>
 </body>
 
 </html>
