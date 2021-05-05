@@ -282,3 +282,34 @@ body{
 .front{
 	z-index: 3;
 }
+
+
+/* buscador de puesto trabajo factibilidad */
+
+.search{
+	border-radius: 1.5rem;
+	background-color: #ffffff;
+	transition: 350ms transform ease;
+}
+.search:hover{
+	transform: scale(1.02);
+}
+.search input{
+	border: none;
+	border-radius: 1.5rem;
+	outline: none;
+	border-color: transparent;
+}
+.search li{
+	font-size: 22px;
+	color: #55a8f0;
+}
+.search li:hover{
+	color: #5AB2FF;
+}
+.inputRounded{
+	border: none;
+	border-radius: 1.5rem;
+	outline: none;
+	border-color: transparent;
+}
