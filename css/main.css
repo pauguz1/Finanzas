@@ -294,22 +294,43 @@ body{
 .search:hover{
 	transform: scale(1.02);
 }
-.search input{
+.search select{
 	border: none;
 	border-radius: 1.5rem;
 	outline: none;
 	border-color: transparent;
 }
+.search option{
+	background-color: transparent
+}
 .search li{
+	border-radius: 1.5rem;
+	width: 100%;
 	font-size: 22px;
-	color: #55a8f0;
+	color: black;
 }
 .search li:hover{
-	color: #5AB2FF;
+	background-color: #e5eaf0;
+	cursor: pointer;
 }
 .inputRounded{
 	border: none;
 	border-radius: 1.5rem;
 	outline: none;
 	border-color: transparent;
+}
+.itemsEmpleado{
+	position: relative;
+	list-style: none;
+	padding-left: 0;
+	width: 100%;
+	text-align: center;
+}
+.null-border-top{
+	border-top-left-radius: 0px 0px;
+	border-top-right-radius: 0px 0px;
+}
+.null-border-bottom{
+	border-bottom-left-radius: 0px 0px;
+	border-bottom-right-radius: 0px 0px;
 }

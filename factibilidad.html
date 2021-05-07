@@ -53,9 +53,25 @@
 
 
   <div class="col-md-12 d-flex justify-content-center mt-5">
-    <div class=" col-sm-12 col-md-2 d-flex justify-content-center search pl-0 pr-0">
-      <input class="col-md-11 pr-0" placeholder="Tipo empleado" type="text">
+    <div class=" col-sm-12 col-md-2 d-flex justify-content-center search null-border-bottom pl-0 pr-0">
+      <select onclick="mostrarMensaje()"    class="col-md-10 pr-0 pl-0" name="tipoEmpleado1" id="tipoEmpleado" >
+        <option value="" hidden>Selecciona una opción</option>
+        <option value="ss" >Ssss</option>
+      </select>
       <li class=" btn  fas fa-plus-circle pl-0"></li>
+    </div>
+  </div>
+
+  <div class="col-md-12 d-flex justify-content-center ">
+    
+    <div class="col-sm-12 col-md-2 d-flex justify-content-center search pl-0 pr-0 null-border-top">
+      <ul class="itemsEmpleado">
+        <li>FrontEnd</li>
+        <li>BackEnd</li>
+        <li>Diseñador UI</li>
+        <li>Diseñador UX</li>
+        <li>Copy Written</li>
+      </ul>
     </div>
 
   </div>
@@ -67,7 +83,7 @@
       <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido paterno</h5> <input type="text" class="col-md-6 inputRounded"></div>
       <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido materno</h5> <input type="text" class="col-md-6 inputRounded"></div>
       <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">horas de trabajo</h5> <input type="text" class="col-md-6 inputRounded"></div>
-      <div class="col-md-12 d-flex justify-content-center mt-2 mb-2"> <button class="col-md-6 btn inputRounded colorSave">Guardar</button></div>
+      <div class="col-md-12 d-flex justify-content-center mt-2 mb-2"> <button onclick="mostrarMensaje()" class="col-md-6 btn inputRounded colorSave">Guardar</button></div>
     </div>
   </div>
 
@@ -121,6 +137,16 @@
 
   <script src="js/control.js"></script>
   <script src="js/actualizar.js"></script>
+  <script>
+    function mostrarMensaje(){
+      var selec1=document.getElementById("tipoEmpleado").click;
+      //var selected = selec1.options[selec1.selectedIndex].text;
+      selec1.selectedIndex=0;
+      console.log(selec1);
+    }
+
+   
+  </script>
 </body>
 
 </html>
