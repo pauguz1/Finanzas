@@ -53,38 +53,25 @@
 
 
   <div class="col-md-12 d-flex justify-content-center mt-5">
-    <div class=" col-sm-12 col-md-2 d-flex justify-content-center search null-border-bottom pl-0 pr-0">
-      <select onclick="mostrarMensaje()"    class="col-md-10 pr-0 pl-0" name="tipoEmpleado1" id="tipoEmpleado" >
-        <option value="" hidden>Selecciona una opción</option>
-        <option value="ss" >Ssss</option>
-      </select>
-      <li class=" btn  fas fa-plus-circle pl-0"></li>
+    <div id="selectEmpleado" class=" col-sm-12 col-md-2 d-flex justify-content-center search pl-0 pr-0">
+      <input id="inputEmpleado" class="col-md-9 inputRounded" type="text" placeholder="Selecciona empleado" disabled>
+      <i class="btn pl-0  pr-0 fas fa-chevron-down d-flex align-items-center justify-content-center" onclick="seleccionEmpleado()"></i>
+      <!--<i class="btn  fas fa-plus-circle pl-0 pr-0" onclick="mostrarDatosEmpleado()" title="Agregar Empleado"></i>-->
     </div>
   </div>
 
-  <div class="col-md-12 d-flex justify-content-center ">
+  <div id="optionEmpleado" class="col-md-12 d-flex justify-content-center ">
     
-    <div class="col-sm-12 col-md-2 d-flex justify-content-center search pl-0 pr-0 null-border-top">
-      <ul class="itemsEmpleado">
-        <li>FrontEnd</li>
-        <li>BackEnd</li>
-        <li>Diseñador UI</li>
-        <li>Diseñador UX</li>
-        <li>Copy Written</li>
-      </ul>
-    </div>
+    <!-- Aqui van todos los tipos de empleado UI UX front etc-->
 
   </div>
 
-  <div class="col-md-12 d-flex justify-content-center ">
-    <div class="row col-md-3 d-flex justify-content-center mt-3 inputRounded dark">
-      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"><h5 class="pr-0 pl-0 text-center col-md-12 mb-0">rellena la información</h5></div>
-      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Nombre</h5> <input type="text" class="col-md-6 inputRounded"></div>
-      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido paterno</h5> <input type="text" class="col-md-6 inputRounded"></div>
-      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido materno</h5> <input type="text" class="col-md-6 inputRounded"></div>
-      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">horas de trabajo</h5> <input type="text" class="col-md-6 inputRounded"></div>
-      <div class="col-md-12 d-flex justify-content-center mt-2 mb-2"> <button onclick="mostrarMensaje()" class="col-md-6 btn inputRounded colorSave">Guardar</button></div>
-    </div>
+
+
+  <!-- recuadro para llenar la informacion del empleado-->
+  <div id="datosEmpleado" class="col-md-12 d-flex justify-content-center ">
+    
+    
   </div>
 
 
@@ -138,15 +125,68 @@
   <script src="js/control.js"></script>
   <script src="js/actualizar.js"></script>
   <script>
-    function mostrarMensaje(){
-      var selec1=document.getElementById("tipoEmpleado").click;
-      //var selected = selec1.options[selec1.selectedIndex].text;
-      selec1.selectedIndex=0;
-      console.log(selec1);
+    var estadoSeleccion=false;
+    var estadoDatosEmpleado=false;
+    function seleccionEmpleado(){
+      var option=document.getElementById('optionEmpleado');
+      var select1=document.getElementById('selectEmpleado').classList.add('null-border-bottom');
+
+      if(estadoSeleccion==false){
+        estadoSeleccion=true;
+        option.innerHTML=`
+      <div  class="col-sm-12 col-md-2 d-flex justify-content-center search items pl-0 pr-0 null-border-top">
+      <ul class="itemsEmpleado">
+        <li id="fron1" onclick="seleccionItem(this)" >FrontEnd</li>
+        <li id="fron2" onclick="seleccionItem(this)" >BackEnd</li>
+        <li id="fron3" onclick="seleccionItem(this)" >Diseñador UI</li>
+        <li id="fron4" onclick="seleccionItem(this)" >Diseñador UX</li>
+        <li id="fron5" onclick="seleccionItem(this)" >Copy Written</li>
+      </ul>
+    </div>
+      `;
+      }else{
+        estadoSeleccion=false;
+        var select1=document.getElementById('selectEmpleado').classList.remove('null-border-bottom')
+        option.innerHTML=``;
+      }
+    }
+
+    function seleccionItem(elemento){
+      var seleccionado=document.getElementById(elemento.id).innerHTML;  
+      console.log(seleccionado);
+      document.getElementById('inputEmpleado').value=seleccionado;
+      seleccionEmpleado();
+      mostrarDatosEmpleado();
+    }
+    function mostrarDatosEmpleado(){
+      var datos1=document.getElementById('datosEmpleado');
+        datos1.innerHTML=`
+        <div class="row col-md-3 d-flex justify-content-center mt-3 inputRounded dark">
+
+          <div class="col-md-12 d-flex justify-content-end close pl-0 pr-0"><i id="form" class="fas fa-times d-flex justify-content-center align-items-center cursorPointer" title="Cerrar" onclick="cerrarFormulario('datosEmpleado')"></i></div>
+
+          <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"><h5 class="pr-0 pl-0 text-center col-md-12 mb-0">rellena la información</h5></div>
+          <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Nombre</h5> <input type="text" class="col-md-6 inputRounded"></div>
+          <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido paterno</h5> <input type="text" class="col-md-6 inputRounded"></div>
+          <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido materno</h5> <input type="text" class="col-md-6 inputRounded"></div>
+          <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">horas de trabajo</h5> <input type="text" class="col-md-6 inputRounded"></div>
+          <div class="col-md-12 d-flex justify-content-center mt-2 mb-2"> <button onclick="mostrarMensaje()" class="col-md-6 btn inputRounded colorSave">Guardar</button></div>
+        </div>
+      `;
+    }
+    /**
+     * Este metodo elimina un elemento con el id que le pasemos como parametro
+     * @param id del formulario a borrar
+     **/
+    function cerrarFormulario(idForm){
+      var form=document.getElementById(String(idForm));
+      document.getElementById('inputEmpleado').value='';
+      form.innerHTML=``;
     }
 
    
   </script>
+  <script src="js/control.js"></script>
 </body>
 
 </html>

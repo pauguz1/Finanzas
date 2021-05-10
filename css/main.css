@@ -292,27 +292,16 @@ body{
 	transition: 350ms transform ease;
 }
 .search:hover{
-	transform: scale(1.02);
+	transform: scale(1.01);
 }
-.search select{
-	border: none;
+
+.search i{
 	border-radius: 1.5rem;
-	outline: none;
-	border-color: transparent;
-}
-.search option{
-	background-color: transparent
-}
-.search li{
-	border-radius: 1.5rem;
-	width: 100%;
+	width: 50px;
 	font-size: 22px;
 	color: black;
 }
-.search li:hover{
-	background-color: #e5eaf0;
-	cursor: pointer;
-}
+
 .inputRounded{
 	border: none;
 	border-radius: 1.5rem;
@@ -320,6 +309,7 @@ body{
 	border-color: transparent;
 }
 .itemsEmpleado{
+	color: black;
 	position: relative;
 	list-style: none;
 	padding-left: 0;
@@ -333,4 +323,21 @@ body{
 .null-border-bottom{
 	border-bottom-left-radius: 0px 0px;
 	border-bottom-right-radius: 0px 0px;
+}
+
+/* para que cambie de color cuando
+acerquemos el mouse en el elemento*/
+.items li:hover{
+	background-color: #e5eaf0;
+	cursor: pointer;
+}
+
+.close i{
+	font-size: 22px;
+	color: white;
+	outline: none;
+	border-color: transparent;
+}
+.cursorPointer{
+	cursor: pointer;
 }
