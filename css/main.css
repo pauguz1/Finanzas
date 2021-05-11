@@ -341,3 +341,19 @@ acerquemos el mouse en el elemento*/
 .cursorPointer{
 	cursor: pointer;
 }
+.login{
+    height: 100%;
+	width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.login a{
+	text-decoration: none;
+	color: white;
+}
+.bod{
+	width: 100%;
+}
+.font22{
+	font-size: 22px;
+}
