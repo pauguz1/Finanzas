@@ -357,3 +357,9 @@ acerquemos el mouse en el elemento*/
 .font22{
 	font-size: 22px;
 }
+.correcto{
+	color: rgb(26, 231, 26);
+}
+.incorrecto{
+	color: rgb(218, 37, 37);
+}
