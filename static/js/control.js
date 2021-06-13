@@ -405,7 +405,8 @@
       <!-- Fin Barra lateral -->
 
 
-      <div id="contenedorActualizar" class="contenedorMensaje dark col-sm-12 col-md-4 ml-5 mr-5  d-flex justify-content-center"> 
+      <div id="contenedorActualizar" class="contenedorMensaje dark col-sm-12 col-md-4  d-flex justify-content-center"> 
+      
 
         <div class="close"> <Button onclick="closePanel('${id}')">X</Button> </div>
         <div class="row mt-3 col-md-6 d-flex justify-content-center">

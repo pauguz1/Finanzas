@@ -45,7 +45,6 @@ body {
 	width: auto;
 }
 .fixed1{
-	position:fixed;
 	display: flex;
 	width: 50px;
 	flex-wrap: wrap;
@@ -53,8 +52,6 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	border-radius: 20px;
-	top: 30%;
-	left: 1px;
 	/*background-color: black;*/
 	/*padding: 15px 5px;*/
 }
@@ -228,7 +225,6 @@ body {
 	margin: auto;
 	background-color: rgba(12, 15, 19, 0.97);
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 }
