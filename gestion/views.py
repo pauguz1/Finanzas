@@ -20,6 +20,8 @@ def index(request):
     }
     return render(request,'gestion/index.html',contexto)
 
+
+# crear balance
 @login_required
 def crearBalance(request):
     
@@ -101,7 +103,7 @@ def crearBalance(request):
         }
         return render(request,'gestion/index.html',contexto)
     
-
+# obtener el detalle del balance
 @login_required
 def detalleBalance(request,pk):
     try:
@@ -114,7 +116,7 @@ def detalleBalance(request,pk):
     return render(request,'gestion/detalleBalance.html',contexto)
 
 
-
+# actualizar balance
 @login_required
 def actualizarBalance(request,pk):
 
@@ -193,6 +195,30 @@ def actualizarBalance(request,pk):
 
         balance.creador=request.user
         balance.save()
+        balance = BalanceGeneral.objects.filter(creador=request.user)
+        contexto={
+        'listaBalance':balance,
+        }
+        return render(request,'gestion/index.html',contexto)
+
+# eliminar balance
+@login_required
+def eliminarBalance(request,pk):
+
+    if request.method == 'GET':
+        try:
+            balance = BalanceGeneral.objects.get(pk=pk)
+        except BalanceGeneral.DoesNotExist:
+            raise Http404("!el balance no existe")
+        contexto={
+            'b':balance
+        }
+        return render(request,'gestion/eliminarBalance.html',contexto)
+
+    elif request.method == 'POST':
+        balance = BalanceGeneral.objects.get(id=request.POST['id'])
+        balance.delete()
+        #eliminamos el registro
         balance = BalanceGeneral.objects.filter(creador=request.user)
         contexto={
         'listaBalance':balance,

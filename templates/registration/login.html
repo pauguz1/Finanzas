@@ -10,13 +10,13 @@
 
 
 
-    <div class="col-md-12 d-flex justify-content-center"><h1>Login Control Escolar Paul Santana</h1></div>
+    <div class="col-md-12 d-flex justify-content-center"><h1>Login</h1></div>
 {% if form.errors %}
   <div class="col-md-12 d-flex justify-content-center error"><p>Su usuario y/o clave no concuerdan. Favor de intentar nuevamente.</p></div>
 {% endif %}
 
 <div class="col-md-12 d-flex justify-content-center mt-login ">
-  <form method="post" action="{% url 'login' %}" class="dark redondeado white mt-4 mb-4  fs20 col-sm-12 col-md-4  d-flex flex-wrap justify-content-center login">
+  <form method="post" action="{% url 'login' %}" class="dark redondeado white mt-4 mb-4  fs20 col-sm-12 col-md-3  d-flex flex-wrap justify-content-center login">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" class="btn btn-primary" value="Login" />

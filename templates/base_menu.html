@@ -5,7 +5,7 @@
 {% block navbar %}
 <nav class="navbar navbar-expand-md navbar-dark black fixed-top" >
     
-    <a class="navbar-brand" href="index.html"><img class="iconLabsol" src="{% static 'images/iconLabsol.png' %}" alt="">Finanzas</a>
+    <a class="navbar-brand" href="{% url 'gestion:index' %}"><img class="iconLabsol" src="{% static 'images/iconLabsol.png' %}" alt="">Finanzas</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barranavegacion" aria-expanded="false" aria-controls="barranavegacion" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
