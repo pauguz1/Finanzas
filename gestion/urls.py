@@ -16,8 +16,8 @@ urlpatterns=[
     path('actualizar/balance/<int:pk>',views.actualizarBalance,name='actualizarBalance'),
     path('eliminar/balance/<int:pk>',views.eliminarBalance,name='eliminarBalance'),
     
-    path('crear/estadoresultados',views.crearBalance,name='crearEstadoResultados'),
-    path('detalle/estadoresultados/<int:pk>',views.detalleBalance,name='detalleEstadoResultados'),
-    path('actualizar/estadoresultados/<int:pk>',views.actualizarBalance,name='actualizarEstadoResultados'),
-    path('eliminar/estadoresultados/<int:pk>',views.eliminarBalance,name='eliminarEstadoResultados')
+    path('crear/estadoresultados',views.crearEstadoResultados,name='crearEstadoResultados'),
+    path('detalle/estadoresultados/<int:pk>',views.detalleEstadoResultados,name='detalleEstadoResultados'),
+    path('actualizar/estadoresultados/<int:pk>',views.actualizarEstadoResultados,name='actualizarEstadoResultados'),
+    path('eliminar/estadoresultados/<int:pk>',views.eliminarEstadoResultados,name='eliminarEstadoResultados')
 ]
