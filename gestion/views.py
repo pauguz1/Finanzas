@@ -11,7 +11,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 #pagina de inicio
 def index(request):
     #guardamos la lista de balance general del usuario en especifico
-    balance = BalanceGeneral.objects.filter(creador=request.user)
+    balance=''
+    print(request.user)
+    if str(request.user) != 'AnonymousUser':
+        balance = BalanceGeneral.objects.filter(creador=request.user)
     contexto={
         'listaBalance':balance,
     }
