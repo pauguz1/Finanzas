@@ -1,0 +1,178 @@
+{% extends "base_menu.html" %}
+
+{% load static %}
+{% block head %}
+<script src="{% static 'js/control.js' %}"></script>
+<script src="{% static 'js/actualizar.js' %}"></script>
+{% endblock %} 
+
+  
+
+
+
+
+{% block content %}
+
+<div id="${id}" class="fondo d-flex justify-content-center" tabindex="-1">
+
+  <!-- Barra lateral -->
+  <div class="fixed1 front">
+    <div id="pasoB1" class="contenido borde1" onclick="mostrarConRango(1,5),mostrarPaso(1)" ><h1 class="borde1">1</h1></div>
+    <div id="pasoB2" class="contenido" onclick="mostrarConRango(6,9),mostrarPaso(2)"><h1>2</h1></div>
+    <div id="pasoB3" class="contenido" onclick="mostrarConRango(10,12),mostrarPaso(3)"><h1>3</h1></div>
+    <div id="pasoB4" class="contenido" onclick="mostrarConRango(13,17),mostrarPaso(4)"><h1>4</h1></div>
+    <div id="pasoB5" class="contenido" onclick="mostrarConRango(18,18),mostrarPaso(5)"><h1>5</h1></div>
+    <div id="pasoB6" class="contenido borde2" onclick="pasoFinal(),mostrarPaso(6)"><h1 class="borde2">6</h1></div>
+  </div>
+  <!-- Fin Barra lateral -->
+
+
+  <div id="contenedorActualizar" class="contenedorMensaje dark col-sm-12 col-md-4  d-flex justify-content-center"> 
+  
+
+    <div class="close"> <Button onclick="window.location='{% url 'gestion:index' %}'" title="Cerrar">X</Button> </div>
+
+    <div class="row pt-4 pb-4  ml-0 mr-0 pl-0 pr-0 col-md-12 d-flex  justify-content-center rounded ">
+
+      <div class="col-md-12 d-flex justify-content-center">
+        <h1>Balance General</h1>
+      </div>
+      <form action="{% url 'gestion:crearBalance' %}" method="POST">
+        {% csrf_token %}
+  
+        <div id="p1" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">disponible</h5>
+          <input class="ml-1 mr-1" id="disponible" name="disponible" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p2" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Valores negociables</h5>
+          <input class="ml-1 mr-1" id="valoresNegociables" name="valoresNegociables" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p3" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Deudores por venta</h5>
+          <input class="ml-1 mr-1" id="deudoresPorVenta" name="deudoresPorVenta" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p4" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Deudores Varios</h5>
+          <input class="ml-1 mr-1" id="deudoresVarios" name="deudoresVarios" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p5" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Impuestos por recuperar</h5>
+          <input class="ml-1 mr-1" id="impuestosPorRecuperar" name="impuestosPorRecuperar" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p6" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Muebles utiles</h5>
+          <input class="ml-1 mr-1" id="mueblesUtiles" name="mueblesUtiles" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p7" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Maquinaria y equipo de oficina</h5>
+          <input class="ml-1 mr-1" id="maquinariaEquipoOficina" name="maquinariaEquipoOficina" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p8" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Otros activos fijos</h5>
+          <input class="ml-1 mr-1" id="otrosActivosFijos" name="otrosActivosFijos" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p9" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Equipo de transporte</h5>
+          <input class="ml-1 mr-1" id="equipoTransporte" name="equipoTransporte" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p10" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Programas computacionales</h5>
+          <input class="ml-1 mr-1" id="programasComputacionales" name="programasComputacionales" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p11" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Otros</h5>
+          <input class="ml-1 mr-1" id="otros" name="otros" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p12" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">amortizaciones</h5>
+          <input class="ml-1 mr-1" id="amortizaciones" name="amortizaciones" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p13" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Cuentas por pagar</h5>
+          <input class="ml-1 mr-1" id="cuentaPorPagar" name="cuentaPorPagar" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p14" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Provedores</h5>
+          <input class="ml-1 mr-1" id="provedores" name="provedores" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p15" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Retenciones</h5>
+          <input class="ml-1 mr-1" id="retenciones" name="retenciones" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p16" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Convenio con instituciones</h5>
+          <input class="ml-1 mr-1" id="convenioConInstituciones" name="convenioConInstituciones" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p17" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">otros</h5>
+          <input class="ml-1 mr-1" id="otros2" name="otros2" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p18" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Acredores hipotecarios</h5>
+          <input class="ml-1 mr-1" id="acredoresHipotecarios" name="acredoresHipotecarios" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p19" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Capital social</h5>
+          <input class="ml-1 mr-1" id="capitalSocial" name="capitalSocial" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p20" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">Utilidades retenidas</h5>
+          <input class="ml-1 mr-1" id="utilidadesRetenidas" name="utilidadesRetenidas" type="number">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+
+        <div id="p21" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+          <h5 class="pl-0 pr-0 text-center col-md-5">fecha balance</h5>
+          <input class="ml-1 mr-1 col-md-6" id="fechaCreacion" name="fechaCreacion" type="date">
+         <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
+        </div>
+  
+        <div id="btnGuardarBalance" class="row col-md-12 mt-3 mb-3 ml-0 mr-0 esconder justify-content-center inputDatos">
+         <button type="submit" class="col-md-12 btn colorSave boton" >Guardar</button>
+        </div>
+      </form>
+  </div>
+</div>
+</div>
+<script src="{% static 'js/controlBalance.js' %}"></script>
+{% endblock %}
+{% block textopie %}{% endblock %}

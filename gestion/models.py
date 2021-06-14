@@ -5,37 +5,37 @@ from datetime import date, datetime
 
 class BalanceGeneral(models.Model):
     #activo circulante
-    disponible = models.FloatField()
-    valoresNegociables = models.FloatField()
-    deudoresPorVenta = models.FloatField()
-    deudoresVarios = models.FloatField()
-    impuestosPorRecuperar = models.FloatField()
+    disponible = models.FloatField(default=0)
+    valoresNegociables = models.FloatField(default=0)
+    deudoresPorVenta = models.FloatField(default=0)
+    deudoresVarios = models.FloatField(default=0)
+    impuestosPorRecuperar = models.FloatField(default=0)
 
 
     #pasivo circulante
-    cuentaPorPagar = models.FloatField()
-    proviciones = models.FloatField()
-    retenciones = models.FloatField()
-    convenioConInstituciones = models.FloatField()
-    otros = models.FloatField()
+    cuentaPorPagar = models.FloatField(default=0)
+    provedores = models.FloatField(default=0)
+    retenciones = models.FloatField(default=0)
+    convenioConInstituciones = models.FloatField(default=0)
+    otros = models.FloatField(default=0)
 
     #activo fijo
-    mueblesUtiles = models.FloatField()
-    maquinariaEquipoOficina = models.FloatField()
-    otrosActivosFijos = models.FloatField()
-    equipoTransporte = models.FloatField()
+    mueblesUtiles = models.FloatField(default=0)
+    maquinariaEquipoOficina = models.FloatField(default=0)
+    otrosActivosFijos = models.FloatField(default=0)
+    equipoTransporte = models.FloatField(default=0)
 
     #pasivo fijo
-    acredoresHipotecarios = models.FloatField()
+    acredoresHipotecarios = models.FloatField(default=0)
 
     #otros activos
-    programasComputacionales = models.FloatField()
-    otros2 = models.FloatField()
-    amortizaciones = models.FloatField()
+    programasComputacionales = models.FloatField(default=0)
+    otros2 = models.FloatField(default=0)
+    amortizaciones = models.FloatField(default=0)
 
     #capital contable
-    capitalSocial = models.FloatField()
-    utilidadesRetenidas = models.FloatField()
+    capitalSocial = models.FloatField(default=0)
+    utilidadesRetenidas = models.FloatField(default=0)
 
     fechaCreacion = models.DateField(default=datetime.now)
     creador = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)

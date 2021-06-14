@@ -28,7 +28,18 @@ body {
 	width: 50px;
 	margin: 0px 5px 0px 5px;
 }
-
+.esconder{
+	display: none;
+}
+.dflex{
+	display: flex;
+}
+.fondoNegro h1{
+	background-color: #000000;
+}
+.fondoSeleccion h1{
+	background-color: rgb(58, 149, 172);
+}
 
 /*--------------------------------------------------- inputs de registro de informacion*/
 
@@ -76,7 +87,7 @@ body {
 	height: 50px;
 	font-size: 25px;
 	color: white;
-	background-color: black;
+	/*background-color: black;*/
 	margin-bottom: 0px;
 	
 }
@@ -110,6 +121,26 @@ body {
 #paso7 h1:hover::after{
 	content: "otros egresos";
 }
+/*--------------------------- Pasos para el balance  --*/
+#pasoB1 h1:hover::after{
+	content: "activos circulante";
+}
+#pasoB2 h1:hover::after{
+	content: "activo fijo";
+}
+#pasoB3 h1:hover::after{
+	content: "otros activos";
+}
+#pasoB4 h1:hover::after{
+	content: "pasivo circulante";
+}
+#pasoB5 h1:hover::after{
+	content: "pasivo fijo";
+}
+#pasoB6 h1:hover::after{
+	content: "capital contable";
+}
+
 /* --------------------------  fin de los pasos */
 
 

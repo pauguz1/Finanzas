@@ -72,7 +72,7 @@ function actualizarPaso1(id){
   elemento.focus();
   }
 
-
+/*
   const $btnCargarPerfil = document.querySelector("#agregar"),
     $perfil = document.querySelector("#agregar");
 $btnCargarPerfil.addEventListener("click", () => {
@@ -81,4 +81,4 @@ $btnCargarPerfil.addEventListener("click", () => {
         .then(respuestaComoHTML => {
             $perfil.innerHTML = respuestaComoHTML;
         });
-});
+});*/
