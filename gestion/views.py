@@ -501,7 +501,8 @@ def eliminarEstadoResultados(request,pk):
 
 
 
-#--------------------------------------- Factibilidad ----------------------------------------
+#---------------------------------------------------------------------- Factibilidad ------------------------------------------------------
+
 # para mostrar el menu de factibilidad 
 @login_required
 def factibilidad(request):
@@ -510,9 +511,13 @@ def factibilidad(request):
         
         tipoEmpleado = TipoEmpleado.objects.all()
         empleados = Empleado.objects.filter(creador=request.user)
+        suma=0.0
+        for a in empleados:
+            suma+=float(a.horas)*float(a.puesto.salario)
         contexto={
             'tp':tipoEmpleado,
-            'listaEmpleados':empleados
+            'listaEmpleados':empleados,
+            'costoOperacion':suma
         }
         return render(request,'gestion/factibilidad.html',contexto)
 
@@ -542,9 +547,13 @@ def factibilidad(request):
 
         tipoEmpleado = TipoEmpleado.objects.all()
         empleados = Empleado.objects.filter(creador=request.user)
+        suma=0.0
+        for a in empleados:
+            suma+=float(a.horas)*float(a.puesto.salario)
         contexto={
             'tp':tipoEmpleado,
-            'listaEmpleados':empleados
+            'listaEmpleados':empleados,
+            'costoOperacion':suma
         }
         return render(request,'gestion/factibilidad.html',contexto)
 
@@ -561,6 +570,7 @@ def detalleEmpleado(request,pk):
     }
     return render(request,'gestion/detalleEmpleado.html',contexto)
 
+# actualizar un empleado
 @login_required
 def actualizarEmpleado(request,pk):
     if request.method == 'GET':
@@ -595,12 +605,17 @@ def actualizarEmpleado(request,pk):
 
         tipoEmpleado = TipoEmpleado.objects.all()
         empleados = Empleado.objects.filter(creador=request.user)
+        suma=0.0
+        for a in empleados:
+            suma+=float(a.horas)*float(a.puesto.salario)
         contexto={
             'tp':tipoEmpleado,
-            'listaEmpleados':empleados
+            'listaEmpleados':empleados,
+            'costoOperacion':suma
         }
         return render(request,'gestion/factibilidad.html',contexto)
 
+#eliminar un empleado
 @login_required
 def eliminarEmpleado(request,pk):
     if request.method == 'GET':
@@ -618,8 +633,12 @@ def eliminarEmpleado(request,pk):
         empleado.delete()
         tipoEmpleado = TipoEmpleado.objects.all()
         empleados = Empleado.objects.filter(creador=request.user)
+        suma=0.0
+        for a in empleados:
+            suma+=float(a.horas)*float(a.puesto.salario)
         contexto={
             'tp':tipoEmpleado,
-            'listaEmpleados':empleados
+            'listaEmpleados':empleados,
+            'costoOperacion':suma
         }
         return render(request,'gestion/factibilidad.html',contexto)

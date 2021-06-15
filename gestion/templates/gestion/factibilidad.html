@@ -68,7 +68,6 @@
       <h5 class="col-md-1 d-flex justify-content-center align-items-center">Actualizar</h5>
       <h5 class="col-md-1 d-flex justify-content-center align-items-center">Ver</h5>
     </div>
-
     {% for e in listaEmpleados %}
     <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between fw-wrap campo inputRounded"> 
       <h5 class="col-md-4 d-flex justify-content-center align-items-center">{{ e.nombre }} {{ e.ap_paterno }}</h5>
@@ -82,6 +81,12 @@
 
     </div>
     
+  </div>
+
+  <div id="datosEmpleado" class="row col-md-12 justify-content-center  d-flex">
+    <div class="row col-md-3 d-flex justify-content-center mt-3 inputRounded dark">
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Costo de la operacion:</h5> <input name="email" type="number" class="col-md-6 inputRounded" value="{{ costoOperacion }}"></div>
+      </div>
   </div>
  
 <br><br><br><br><br>
