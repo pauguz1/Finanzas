@@ -1,3 +1,6 @@
+
+
+//  -----------Mensajes de informacion para los mensajes de informacion de balance
 function p1(){
       crearMensaje2('zt1','Disponoble','Es el dinero liquido o de rapida disponibilidad para gastos pequeños');
 }

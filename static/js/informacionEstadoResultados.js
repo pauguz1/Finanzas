@@ -1,3 +1,8 @@
+
+
+
+
+
 //  -----------Mensajes de informacion para los estados de resultados
 function a1(){
       crearMensaje2('at1','ventas totales','son todas las ventas sin ninguna deduccion');
