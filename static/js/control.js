@@ -41,6 +41,7 @@
   var elemento=document.getElementById(String(id));
   elemento.focus();
     }
+    
 
     /* Crea un mensaje con titulo, descripcion y Video */
     function crearMensaje3(id,titulo,descripcion,urlVideo){
