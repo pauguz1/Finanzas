@@ -3,6 +3,7 @@ from django.conf import settings
 from datetime import date, datetime
 # Create your models here.
 
+# modelo para el balace general
 class BalanceGeneral(models.Model):
     #activo circulante
     disponible = models.FloatField(default=0)
@@ -42,3 +43,47 @@ class BalanceGeneral(models.Model):
 
     def __str__(self):
         return '{} {}'.format(self.creador,self.fechaCreacion)
+
+# modelo para el estado de resultados
+class EstadoResultados(models.Model):
+    #activo circulante 28 campos en total
+    ventas = models.FloatField(default=0)
+    devolucionesVentas = models.FloatField(default=0)
+    descuentosVentas = models.FloatField(default=0)
+    bonifRebVentas = models.FloatField(default=0)
+
+    inventarioInicial = models.FloatField(default=0)
+    compras = models.FloatField(default=0)
+    fletesCompras = models.FloatField(default=0)
+    gastosImportacion = models.FloatField(default=0)
+
+    devolucionesCompras = models.FloatField(default=0)
+    descuentosCompras = models.FloatField(default=0)
+    bonificacionCompras = models.FloatField(default=0)
+
+    inventarioFinal = models.FloatField(default=0)
+
+    sueldoVendedores = models.FloatField(default=0)
+    comisionVenta = models.FloatField(default=0)
+    propaganda = models.FloatField(default=0)
+    impuestosMunicipales = models.FloatField(default=0)
+
+    gastosAlquiler = models.FloatField(default=0)
+    gastosGenerales = models.FloatField(default=0)
+    sueldoAdministracion = models.FloatField(default=0)
+    perdidasCuentasMalas = models.FloatField(default=0)
+
+    alquileresGanados = models.FloatField(default=0)
+    interesesGanados = models.FloatField(default=0)
+    comisionesGanadas = models.FloatField(default=0)
+
+    interesesGastos = models.FloatField(default=0)
+    perdidasVentas = models.FloatField(default=0)
+    perdidaEnRoboMercancia = models.FloatField(default=0)
+
+    fechaCreacion = models.DateField(default=datetime.now)
+    creador = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return '{} {}'.format(self.creador,self.fechaCreacion)
+

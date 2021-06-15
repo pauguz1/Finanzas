@@ -25,16 +25,16 @@
       <div class="col-md-12 mt-1 mb-1"><h1 class="text-center">Estado Resultados</h1></div>
 
     <div class="col-md-12 d-flex justify-content-center mt-1 mb-1">
-      <button id="agregar" class="btn btn-info col-md-12 ml-2 mr-2 pl-0 pr-0 boton" onclick="window.location='{% url 'gestion:crearBalance' %}'">Crear Nuevo</button>
+      <button id="agregar" class="btn colorSave col-md-12 ml-2 mr-2 pl-0 pr-0 boton" onclick="window.location='{% url 'gestion:crearEstadoResultados' %}'">Crear Nuevo</button>
     </div>
 
     <div id="tableEstadoResultados" class="col-md-12 mt-1 mb-1  ">
-      {% for a in listaBalance %}
+      {% for a in listaEstadoResultados %}
       <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between campo"> 
         <input type="date" value="{{ a.fechaCreacion|date:'Y-m-d' }}">
-        <li onclick="window.location='{% url 'gestion:eliminarBalance' a.id %}'" class="fas fa-trash delete d-flex align-items-center" title="Eliminar"></li>
-        <li onclick="mostrarPaso('1','paso1')" class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
-        <li class="fas fa-eye d-flex align-items-center watch" title="Ver"></li>
+        <li onclick="window.location='{% url 'gestion:eliminarEstadoResultados' a.id %}'" class="fas fa-trash delete d-flex align-items-center" title="Eliminar"></li>
+        <li onclick="window.location='{% url 'gestion:actualizarEstadoResultados' a.id %}'" class="fas fa-user-edit d-flex align-items-center update" title="Actualizar"></li>
+        <li onclick="window.location='{% url 'gestion:detalleEstadoResultados' a.id %}'" class="fas fa-eye d-flex align-items-center watch" title="Ver"></li>
       </div>
       {% endfor %}      
     </div>
@@ -45,7 +45,7 @@
     <div class="col-md-4   dark rounded ml-1 mr-1 pl-0 pr-0 mt-2 mb-2">
       <div class="col-md-12 mt-1 mb-1"><h1 class="text-center">Balance</h1></div>
     <div class="col-md-12 d-flex justify-content-center mt-1 mb-1">
-      <button id="agregar" class="btn btn-info col-md-12 ml-2 mr-2 pl-0 pr-0 boton" onclick="window.location='{% url 'gestion:crearBalance' %}'">Crear Nuevo</button>
+      <button id="agregar" class="btn colorSave col-md-12 ml-2 mr-2 pl-0 pr-0 boton" onclick="window.location='{% url 'gestion:crearBalance' %}'">Crear Nuevo</button>
     </div>
     <div id="tableEstadoResultados" class="col-md-12 mt-1 mb-1 ">
   

@@ -38,175 +38,174 @@
       <div class="col-md-12 d-flex justify-content-center">
         <h1>Estado de Resultados</h1>
       </div>
-      <form action="{% url 'gestion:crearEstadoResultados' %}" method="POST" class="col-md-12">
-        {% csrf_token %}
+
   
         <div id="p1" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">Ventas</h5>
-          <input class="ml-1 mr-1" id="disponible" name="ventas" type="number">
+          <input class="ml-1 mr-1" id="disponible" name="ventas" type="number" value="{{ e.ventas }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p2" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">devolucionesVentas</h5>
-          <input class="ml-1 mr-1" id="devolucionesVentas" name="devolucionesVentas" type="number">
+          <input class="ml-1 mr-1" id="devolucionesVentas" name="devolucionesVentas" type="number" value="{{ e.devolucionesVentas }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p3" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">descuentosVentas</h5>
-          <input class="ml-1 mr-1" id="descuentosVentas" name="descuentosVentas" type="number">
+          <input class="ml-1 mr-1" id="descuentosVentas" name="descuentosVentas" type="number" value="{{ e.descuentosVentas }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p4" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5"> bonifRebVentas</h5>
-          <input class="ml-1 mr-1" id="bonifRebVentas" name="bonifRebVentas" type="number">
+          <input class="ml-1 mr-1" id="bonifRebVentas" name="bonifRebVentas" type="number" value="{{ e.bonifRebVentas }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p5" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">inventarioInicial</h5>
-          <input class="ml-1 mr-1" id="inventarioInicial" name="inventarioInicial" type="number">
+          <input class="ml-1 mr-1" id="inventarioInicial" name="inventarioInicial" type="number" value="{{ e.inventarioInicial }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
-        <div id="p6" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
+        <div id="p6" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos" >
           <h5 class="pl-0 pr-0 text-center col-md-5">compras</h5>
-          <input class="ml-1 mr-1" id="compras" name="compras" type="number">
+          <input class="ml-1 mr-1" id="compras" name="compras" type="number" value="{{ e.compras }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p7" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">fletesCompras</h5>
-          <input class="ml-1 mr-1" id="fletesCompras" name="fletesCompras" type="number">
+          <input class="ml-1 mr-1" id="fletesCompras" name="fletesCompras" type="number" value="{{ e.fletesCompras }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p8" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">gastosImportacion</h5>
-          <input class="ml-1 mr-1" id="gastosImportacion" name="gastosImportacion" type="number">
+          <input class="ml-1 mr-1" id="gastosImportacion" name="gastosImportacion" type="number" value="{{ e.gastosImportacion }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p9" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">devolucionesCompras</h5>
-          <input class="ml-1 mr-1" id="devolucionesCompras" name="devolucionesCompras" type="number">
+          <input class="ml-1 mr-1" id="devolucionesCompras" name="devolucionesCompras" type="number" value="{{ e.devolucionesCompras }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p10" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">descuentosCompras</h5>
-          <input class="ml-1 mr-1" id="descuentosCompras" name="descuentosCompras" type="number">
+          <input class="ml-1 mr-1" id="descuentosCompras" name="descuentosCompras" type="number" value="{{ e.descuentosCompras }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p11" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">bonificacionCompras</h5>
-          <input class="ml-1 mr-1" id="bonificacionCompras" name="bonificacionCompras" type="number">
+          <input class="ml-1 mr-1" id="bonificacionCompras" name="bonificacionCompras" type="number" value="{{ e.bonificacionCompras }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p12" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">inventarioFinal</h5>
-          <input class="ml-1 mr-1" id="inventarioFinal" name="inventarioFinal" type="number">
+          <input class="ml-1 mr-1" id="inventarioFinal" name="inventarioFinal" type="number" value="{{ e.inventarioFinal }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p13" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">sueldoVendedores</h5>
-          <input class="ml-1 mr-1" id="sueldoVendedores" name="sueldoVendedores" type="number">
+          <input class="ml-1 mr-1" id="sueldoVendedores" name="sueldoVendedores" type="number" value="{{ e.sueldoVendedores }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p14" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">comisionVenta</h5>
-          <input class="ml-1 mr-1" id="comisionVenta" name="comisionVenta" type="number">
+          <input class="ml-1 mr-1" id="comisionVenta" name="comisionVenta" type="number" value="{{ e.comisionVenta }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p15" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">propaganda</h5>
-          <input class="ml-1 mr-1" id="propaganda" name="propaganda" type="number">
+          <input class="ml-1 mr-1" id="propaganda" name="propaganda" type="number" value="{{ e.propaganda }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p16" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">impuestosMunicipales</h5>
-          <input class="ml-1 mr-1" id="impuestosMunicipales" name="impuestosMunicipales" type="number">
+          <input class="ml-1 mr-1" id="impuestosMunicipales" name="impuestosMunicipales" type="number" value="{{ e.impuestosMunicipales }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p17" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">gastosAlquiler</h5>
-          <input class="ml-1 mr-1" id="gastosAlquiler" name="gastosAlquiler" type="number">
+          <input class="ml-1 mr-1" id="gastosAlquiler" name="gastosAlquiler" type="number" value="{{ e.gastosAlquilers }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p18" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">gastosGenerales</h5>
-          <input class="ml-1 mr-1" id="gastosGenerales" name="gastosGenerales" type="number">
+          <input class="ml-1 mr-1" id="gastosGenerales" name="gastosGenerales" type="number" value="{{ e.gastosGenerales }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p19" class="row col-md-12 mt-1 mb-1 ml-0 mr-0  dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">sueldoAdministracion</h5>
-          <input class="ml-1 mr-1" id="sueldoAdministracion" name="sueldoAdministracion" type="number">
+          <input class="ml-1 mr-1" id="sueldoAdministracion" name="sueldoAdministracion" type="number" value="{{ e.sueldoAdministracion }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p20" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">perdidasCuentasMalas</h5>
-          <input class="ml-1 mr-1" id="perdidasCuentasMalas" name="perdidasCuentasMalas" type="number">
+          <input class="ml-1 mr-1" id="perdidasCuentasMalas" name="perdidasCuentasMalas" type="number" value="{{ e.perdidasCuentasMalas }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p21" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">alquileresGanados</h5>
-          <input class="ml-1 mr-1 col-md-6" id="alquileresGanados" name="alquileresGanados" type="number">
+          <input class="ml-1 mr-1 col-md-6" id="alquileresGanados" name="alquileresGanados" type="number" value="{{ e.alquileresGanados }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p22" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">interesesGanados</h5>
-          <input class="ml-1 mr-1 col-md-6" id="interesesGanados" name="interesesGanados" type="number">
+          <input class="ml-1 mr-1 col-md-6" id="interesesGanados" name="interesesGanados" type="number" value="{{ e.interesesGanados }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p23" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">comisionesGanadas</h5>
-          <input class="ml-1 mr-1 col-md-6" id="comisionesGanadas" name="comisionesGanadas" type="number">
+          <input class="ml-1 mr-1 col-md-6" id="comisionesGanadas" name="comisionesGanadas" type="number" value="{{ e.comisionesGanadas }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
-        <div id="p24" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
+        <div id="p24" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos" >
           <h5 class="pl-0 pr-0 text-center col-md-5">interesesGastos</h5>
-          <input class="ml-1 mr-1 col-md-6" id="interesesGastos" name="interesesGastos" type="number">
+          <input class="ml-1 mr-1 col-md-6" id="interesesGastos" name="interesesGastos" type="number" value="{{ e.interesesGastos }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p25" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">perdidasVentas</h5>
-          <input class="ml-1 mr-1 col-md-6" id="perdidasVentas" name="perdidasVentas" type="number">
+          <input class="ml-1 mr-1 col-md-6" id="perdidasVentas" name="perdidasVentas" type="number" value="{{ e.perdidasVentas }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p26" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">perdidaEnRoboMercancia</h5>
-          <input class="ml-1 mr-1 col-md-6" id="perdidaEnRoboMercancia" name="perdidaEnRoboMercancia" type="number">
+          <input class="ml-1 mr-1 col-md-6" id="perdidaEnRoboMercancia" name="perdidaEnRoboMercancia" type="number" value="{{ e.perdidaEnRoboMercancia }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
 
         <div id="p27" class="row col-md-12 mt-1 mb-1 ml-0 mr-0 dflex justify-content-center inputDatos">
           <h5 class="pl-0 pr-0 text-center col-md-5">fecha Estado Resultados</h5>
-          <input class="ml-1 mr-1 col-md-6" id="fechaCreacion" name="fechaCreacion" type="date">
+          <input class="ml-1 mr-1 col-md-6" id="fechaCreacion" name="fechaCreacion" type="date" value="{{ e.fechaCreacion|date:'Y-m-d' }}">
          <a class="ml-1 mr-1 h5" href="#" title="Información adicional">?</a>
         </div>
   
         <div id="btnGuardarBalance" class="row col-md-12 mt-3 mb-3 ml-0 mr-0 esconder justify-content-center inputDatos">
-         <button type="submit" class="col-md-12 btn colorSave boton" >Guardar</button>
+         <button onclick="window.location='{% url 'gestion:index' %}'" class="col-md-12 btn colorSave boton" >Regresar al inicio</button>
         </div>
-      </form>
+
   </div>
 </div>
 </div>

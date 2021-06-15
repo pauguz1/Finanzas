@@ -1,31 +1,44 @@
+  {% extends "base_bootstrap.html" %}
 
-{% extends "base_bootstrap.html" %}
+  {% block head %} 
+  
+{% load static %}
+  {% endblock %}
+  
+  {% block content %}
+  
+  <!-- Login -->
+  <div class="col-md-12 login d-flex justify-content-center">
+    <div class="row col-md-2 mt-5 h-50 dark inputRounded d-flex justify-content-center">
+      <img class=" mt-5 mb-5" src="{% static 'images/iconLabsol.svg' %}" alt="">
+      <form  method="post" action="{% url 'login' %}" >
+        {% csrf_token %}
+        <h5 class="col-md-12">Usuario</h5>
+        <input name="username" class="col-md-12 inputRounded mb-1 font22" placeholder="Usuario" type="text">
+        <h5 class="col-md-12">Contraseña</h5>
+        <input name="password" class="col-md-12 inputRounded mb-1 font22" placeholder="Contraseña" type="text">
+        <button type="submit" class="col-md-12 btn btn-info inputRounded mt-2 mb-2">Iniciar Sesion</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+      
+      <a class="mt-2 mb-3" href="{% url 'login' %}">Registrarme</a>
+    </div>
+  </div>
+  
+  {% endblock %}
+  
+  {% block textopie %}
+  © 2021 - FinanzasX
+  {% endblock %}
 
-{% block head %} 
-
-
-{% endblock %}
-
-{% block content %}
 
 
 
-    <div class="col-md-12 d-flex justify-content-center"><h1>Login</h1></div>
-{% if form.errors %}
-  <div class="col-md-12 d-flex justify-content-center error"><p>Su usuario y/o clave no concuerdan. Favor de intentar nuevamente.</p></div>
-{% endif %}
 
-<div class="col-md-12 d-flex justify-content-center mt-login ">
-  <form method="post" action="{% url 'login' %}" class="dark redondeado white mt-4 mb-4  fs20 col-sm-12 col-md-3  d-flex flex-wrap justify-content-center login">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" class="btn btn-primary" value="Login" />
-    <input type="hidden" name="next" value="{{ next }}" />
-    </form>
-</div>
 
-{% endblock %}
 
-{% block textopie %}
-© 2021 - Paul Santana
-{% endblock %}
+
+
+
+  <script src="js/control.js"></script>
+  <script src="js/actualizar.js"></script>

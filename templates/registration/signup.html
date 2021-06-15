@@ -1,0 +1,59 @@
+
+{% extends "base_bootstrap.html" %}
+
+{% block head %} 
+
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Registro -->
+<div class="col-md-12 login d-flex justify-content-center align-items-center">
+  <div class="row col-md-2 dark inputRounded d-flex justify-content-center">
+    <img class=" mt-5 mb-5" src="images/iconLabsol.svg" alt="">
+    <h2 class="col-md-12 text-center">Rellena la informacion </h2>
+    <form class="col-md-12" action="">
+      <h5 class="col-md-12">Nombre de Usuario</h5>
+      <input class="col-md-12 inputRounded mb-1 font22" placeholder="Usuario" type="text">
+      <h5 class="col-md-12">Contraseña</h5>
+      <input id="pass1" class="col-md-12 inputRounded mb-1 font22" onkeyup="validarPassword()" placeholder="Contraseña" type="password">
+      <h5 class="col-md-12">Vuelve a escribir la contraseña</h5>
+      <input id="pass2" class="col-md-12 inputRounded mb-1 font22" onkeyup="validarPassword()" placeholder="Contraseña" type="password">
+
+      <h5 id="txtValidacionPassword" class="col-md-12"></h5>
+
+      <button class="col-md-12 btn btn-info inputRounded mt-2 mb-2">Guardar</button>
+    </form>
+    
+    <a class="col-md-12 text-center mt-1 mb-1" href="#">Iniciar Sesion</a>
+  </div>
+</div>
+<script>
+  // funcion para validar que la contraseña se escribio correcto 2 veces
+  function validarPassword(){
+    var p1=document.getElementById("pass1").value;
+    var p2=document.getElementById("pass2").value;
+    var texto=document.getElementById('txtValidacionPassword');
+
+    if(p1==p2){
+      texto.className='correcto';
+      texto.innerHTML=`Contraseñas correctas`;
+    }else{
+      texto.className='incorrecto';
+      texto.innerHTML=`Las Contraseñas no coinciden`;
+    }
+  }
+</script>
+
+    
+
+{% endblock %}
+
+{% block textopie %}
+© 2021 - FinanzasX
+{% endblock %}
+
+  
+
+  

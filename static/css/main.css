@@ -406,6 +406,7 @@ acerquemos el mouse en el elemento*/
 .incorrecto{
 	color: rgb(218, 37, 37);
 }
+/* boton borrar */
 .borrar{
 	color: white;
 	background-color: rgb(238, 63, 63);
