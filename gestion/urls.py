@@ -19,5 +19,10 @@ urlpatterns=[
     path('crear/estadoresultados',views.crearEstadoResultados,name='crearEstadoResultados'),
     path('detalle/estadoresultados/<int:pk>',views.detalleEstadoResultados,name='detalleEstadoResultados'),
     path('actualizar/estadoresultados/<int:pk>',views.actualizarEstadoResultados,name='actualizarEstadoResultados'),
-    path('eliminar/estadoresultados/<int:pk>',views.eliminarEstadoResultados,name='eliminarEstadoResultados')
+    path('eliminar/estadoresultados/<int:pk>',views.eliminarEstadoResultados,name='eliminarEstadoResultados'),
+
+    path('factibilidad/',views.factibilidad,name="factibilidad"),
+    path('detalle/empleado/<int:pk>',views.detalleEmpleado,name="detalleEmpleado"),
+    path('actualizar/empleado/<int:pk>',views.actualizarEmpleado,name="actualizarEmpleado"),
+    path('eliminar/empleado/<int:pk>',views.eliminarEmpleado,name="eliminarEmpleado")
 ]

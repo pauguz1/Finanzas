@@ -1,0 +1,37 @@
+{% extends "base_menu.html" %}
+
+{% block head %} 
+
+{% load static %}
+{% endblock %}
+
+{% block content %}
+
+<div id="datosEmpleado" class="row col-md-12 d-flex justify-content-center">
+    <div class="row col-md-3 d-flex justify-content-center mt-3 inputRounded dark">
+
+      <div class="col-md-12 d-flex justify-content-end close pl-0 pr-0"><i id="form" class="fas fa-times d-flex justify-content-center align-items-center cursorPointer" title="Cerrar" onclick="window.location='{% url 'gestion:factibilidad' %}'" ></i></div>
+
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"><h5 class="pr-0 pl-0 text-center col-md-12 mb-0">rellena la información</h5></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2 esconder"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">tipoEmpleado</h5> <input id="tipoEmpleado" name="tipoEmpleado" type="text" class="col-md-6 inputRounded"></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Nombre</h5> <input name="nombre" type="text" class="col-md-6 inputRounded" required value="{{ e.nombre }}"></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido paterno</h5> <input name="ap_paterno" type="text" class="col-md-6 inputRounded" required value="{{ e.ap_paterno }}"></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido materno</h5> <input name="ap_materno" type="text" class="col-md-6 inputRounded" required value="{{ e.ap_materno }}"></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Email</h5> <input name="email" type="email" class="col-md-6 inputRounded" required value="{{ e.email }}"></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Telefono</h5> <input name="telefono" type="number" class="col-md-6 inputRounded" required value="{{ e.telefono }}"></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">horas de trabajo</h5> <input name="horas" type="number" class="col-md-6 inputRounded" required value="{{ e.horas }}"></div>
+      
+
+      </div>
+  </div>
+
+<br><br><br><br><br>
+{% endblock %}
+
+
+{% block textopie %}
+  © 2021 - FinanzasX
+  {% endblock %}
+
+
+

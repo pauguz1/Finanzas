@@ -1,0 +1,202 @@
+
+  {% extends "base_menu.html" %}
+
+  {% block head %} 
+  
+{% load static %}
+  {% endblock %}
+  
+  {% block content %}
+  <div class="col-md-12 d-flex justify-content-center mt-5">
+    <div id="selectEmpleado" class=" col-sm-12 col-md-2 d-flex justify-content-center search pl-0 pr-0">
+      <input id="inputEmpleado" class="col-md-9 inputRounded" type="text" placeholder="Selecciona empleado" disabled>
+      <i class="btn pl-0  pr-0 fas fa-chevron-down d-flex align-items-center justify-content-center" onclick="seleccionEmpleado()"></i>
+      <!--<i class="btn  fas fa-plus-circle pl-0 pr-0" onclick="mostrarDatosEmpleado()" title="Agregar Empleado"></i>-->
+    </div>
+  </div>
+
+  <div id="optionEmpleado" class="col-md-12 justify-content-center esconder">
+    
+    <!-- Aqui van todos los tipos de empleado UI UX front etc-->
+    <div  class="col-sm-12 col-md-2 d-flex justify-content-center search items pl-0 pr-0 null-border-top">
+      <ul class="itemsEmpleado">
+        {% for a in tp %}
+        <li id="{{ a.id }}" onclick="seleccionItem(this)" >{{ a }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+
+
+
+  <!-- recuadro para llenar la informacion del empleado-->
+  <div id="datosEmpleado" class="row col-md-12 justify-content-center  esconder">
+    <div class="row col-md-3 d-flex justify-content-center mt-3 inputRounded dark">
+
+      <div class="col-md-12 d-flex justify-content-end close pl-0 pr-0"><i id="form" class="fas fa-times d-flex justify-content-center align-items-center cursorPointer" title="Cerrar" onclick="cerrar()"></i></div>
+
+      <form action="{% url 'gestion:factibilidad' %}" method="POST">
+        {% csrf_token %}
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"><h5 class="pr-0 pl-0 text-center col-md-12 mb-0">rellena la información</h5></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2 esconder"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">tipoEmpleado</h5> <input id="tipoEmpleado" name="tipoEmpleado" type="text" class="col-md-6 inputRounded"></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Nombre</h5> <input name="nombre" type="text" class="col-md-6 inputRounded" required></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido paterno</h5> <input name="ap_paterno" type="text" class="col-md-6 inputRounded" required></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido materno</h5> <input name="ap_materno" type="text" class="col-md-6 inputRounded" required></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Email</h5> <input name="email" type="email" class="col-md-6 inputRounded" required></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Telefono</h5> <input name="telefono" type="number" class="col-md-6 inputRounded" required></div>
+      <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">horas de trabajo</h5> <input name="horas" type="number" class="col-md-6 inputRounded" required></div>
+      <div class="col-md-12 d-flex justify-content-center mt-2 mb-2"> <button type="submit" class="col-md-6 btn inputRounded colorSave">Guardar</button></div>
+    </form>
+
+      </div>
+  </div>
+
+
+
+
+  <!-- recuadro con los empleados agregados-->
+  <div id="infoEmpleados" class="col-md-12 d-flex justify-content-center mt-5">
+    
+    <div class="col-md-6">
+      <div class="col-md-12 mt-1 mb-1"><h1 class="text-center">Empleados</h1></div>
+    <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between fw-wrap campo inputRounded"> 
+      <h5 class="col-md-4 d-flex justify-content-center align-items-center">Nombre</h5>
+      <h5 class="col-md-4 d-flex justify-content-center align-items-center">Rol</h5>
+      <h5 class="col-md-1 d-flex justify-content-center align-items-center">Horas</h5>
+      <h5 class="col-md-1 d-flex justify-content-center align-items-center">Borrar</h5>
+      <h5 class="col-md-1 d-flex justify-content-center align-items-center">Actualizar</h5>
+      <h5 class="col-md-1 d-flex justify-content-center align-items-center">Ver</h5>
+    </div>
+
+    {% for e in listaEmpleados %}
+    <div class="col-md-12 mt-2 mb-2 d-flex justify-content-between fw-wrap campo inputRounded"> 
+      <h5 class="col-md-4 d-flex justify-content-center align-items-center">{{ e.nombre }} {{ e.ap_paterno }}</h5>
+      <h5 class="col-md-4 d-flex justify-content-center align-items-center">{{ e.puesto.nombre }}</h5>
+      <h5 class="col-md-1 d-flex justify-content-center align-items-center">{{ e.horas }}</h5>
+      <li onclick="window.location='{% url 'gestion:eliminarEmpleado' e.id %}'" class=" col-md-1 fas fa-trash delete d-flex justify-content-center align-items-center" title="Eliminar"></li>
+      <li onclick="window.location='{% url 'gestion:actualizarEmpleado' e.id %}'" class=" col-md-1 fas fa-user-edit d-flex align-items-center justify-content-center update" title="Actualizar"></li>
+      <li onclick="window.location='{% url 'gestion:detalleEmpleado' e.id %}'" class=" col-md-1 fas fa-eye d-flex align-items-center justify-content-center watch" title="Ver"></li>
+    </div>
+    {% endfor %}
+
+    </div>
+    
+  </div>
+ 
+<br><br><br><br><br>
+
+  <!--  Este es el contenedor del mensaje -->
+
+  <!--<div id="fondo" class="fondo">
+    <div class="contenedorMensaje">
+      <div class="close" > <Button onclick="closePanel('fondo')">X</Button> </div>
+      <div class="titulo"> <h1>Venta de las cosas de la vida</h1> </div>
+      <div class="descripcion">
+        <p>Este mensaje es con fines informativos
+          Este mensaje es con fines informativos
+          Este mensaje es con fines informativos
+        
+        </p>
+      </div>
+        <iframe class="video" src="https://www.youtube.com/embed/LBagGr5iFHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>-->
+
+
+<!--  FIN contenedor del mensaje -->
+
+<script>
+  var estadoSeleccion=false;
+  var estadoDatosEmpleado=false;
+  function seleccionEmpleado(){
+    var option=document.getElementById('optionEmpleado');
+    // obtenemos el valor que fue seleccioando en la lista de tipos de empleado
+    var tipoEmpleadoSeleccionado=document.getElementById('inputEmpleado').value;
+    // asignamos dicho valor a el input de tipo empleado del formulario
+    var itemFormualrio=document.getElementById('tipoEmpleado').value=tipoEmpleadoSeleccionado;
+    
+
+    var select1=document.getElementById('selectEmpleado').classList.add('null-border-bottom');
+
+    if(estadoSeleccion==false){
+      document.getElementById('optionEmpleado').classList.add('dflex');
+      document.getElementById('optionEmpleado').classList.remove('esconder');
+      estadoSeleccion=true;
+    }else{
+      document.getElementById('optionEmpleado').classList.remove('dflex');
+      document.getElementById('optionEmpleado').classList.add('esconder');
+      estadoSeleccion=false;
+      // despues lo removemos la clase para que quede redondeada
+      var select1=document.getElementById('selectEmpleado').classList.remove('null-border-bottom');
+    }
+  }
+
+  function seleccionItem(elemento){
+    var seleccionado=document.getElementById(elemento.id).innerHTML;  
+    //console.log(seleccionado);
+    document.getElementById('inputEmpleado').value=seleccionado;
+    document.getElementById('datosEmpleado').classList.add('dflex');
+    document.getElementById('datosEmpleado').classList.remove('esconder');
+    seleccionEmpleado();// quita el despliegue de la lista
+    //mostrarDatosEmpleado();
+  }
+  function mostrarDatosEmpleado(){
+    var datos1=document.getElementById('datosEmpleado');
+      datos1.innerHTML=`
+      <div class="row col-md-3 d-flex justify-content-center mt-3 inputRounded dark">
+
+        <div class="col-md-12 d-flex justify-content-end close pl-0 pr-0"><i id="form" class="fas fa-times d-flex justify-content-center align-items-center cursorPointer" title="Cerrar" onclick="cerrarFormulario('datosEmpleado')"></i></div>
+
+        <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"><h5 class="pr-0 pl-0 text-center col-md-12 mb-0">rellena la información</h5></div>
+        <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Nombre</h5> <input type="text" class="col-md-6 inputRounded"></div>
+        <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido paterno</h5> <input type="text" class="col-md-6 inputRounded"></div>
+        <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">Apellido materno</h5> <input type="text" class="col-md-6 inputRounded"></div>
+        <div class="row col-md-12 pl-0 pr-0 mt-2 mb-2"> <h5 class="pr-0 pl-0 text-center col-md-6 mb-0">horas de trabajo</h5> <input type="text" class="col-md-6 inputRounded"></div>
+        <div class="col-md-12 d-flex justify-content-center mt-2 mb-2"> <button onclick="mostrarMensaje()" class="col-md-6 btn inputRounded colorSave">Guardar</button></div>
+      </div>
+    `;
+  }
+  /**
+   * Este metodo elimina un elemento con el id que le pasemos como parametro
+   * @param id del formulario a borrar
+   **/
+  function cerrarFormulario(idForm){
+    var form=document.getElementById(String(idForm));
+    document.getElementById('inputEmpleado').value='';
+    form.innerHTML=``;
+  }
+/* cerrar el formulario Empleado */
+  function cerrar(){
+    console.log('seese')
+    document.getElementById('datosEmpleado').classList.add('esconder');
+    document.getElementById('datosEmpleado').classList.remove('dflex');
+  }
+ 
+</script>
+
+  
+  {% endblock %}
+  
+  {% block textopie %}
+  © 2021 - FinanzasX
+  {% endblock %}
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+

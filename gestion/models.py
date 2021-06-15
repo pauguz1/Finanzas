@@ -87,3 +87,28 @@ class EstadoResultados(models.Model):
     def __str__(self):
         return '{} {}'.format(self.creador,self.fechaCreacion)
 
+
+# modelo para el tipo de empleado
+class TipoEmpleado(models.Model):
+    #activo circulante 28 campos en total
+    nombre = models.CharField(max_length=50)
+    salario = models.FloatField(default=0)
+    descripcion = models.CharField(max_length=60)
+    def __str__(self):
+        return '{}'.format(self.nombre)
+
+# modelo para el tipo de empleado
+class Empleado(models.Model):
+    #activo circulante 28 campos en total
+    nombre = models.CharField(max_length=50)
+    ap_paterno = models.CharField(max_length=40)
+    ap_materno = models.CharField(max_length=40)
+    email = models.CharField(max_length=50)
+    telefono = models.CharField(max_length=10)
+    fechaCreacion = models.DateField(default=datetime.now)
+    creador = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
+    # para las horas que va a trabajar
+    horas = models.IntegerField()
+    puesto = models.ForeignKey(TipoEmpleado,on_delete=models.CASCADE)
+    def __str__(self):
+        return '{}'.format(self.nombre)
