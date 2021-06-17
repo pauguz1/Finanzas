@@ -6,6 +6,7 @@ from .models import BalanceGeneral, EstadoResultados, TipoEmpleado, Empleado
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse, reverse_lazy
 # Create your views here.
 
 
@@ -101,17 +102,7 @@ def crearBalance(request):
 
         balance.creador=request.user
         balance.save()
-        balance=''
-        estadoResultados=''
-        if str(request.user) != 'AnonymousUser':
-            balance = BalanceGeneral.objects.filter(creador=request.user)
-            estadoResultados=EstadoResultados.objects.filter(creador=request.user)
-        contexto={
-        'listaBalance':balance,
-        'listaEstadoResultados':estadoResultados
-        }
-
-        return render(request,'gestion/index.html',contexto)
+        return redirect('gestion:index')
     
 # obtener el detalle del balance
 @login_required
@@ -205,16 +196,7 @@ def actualizarBalance(request,pk):
 
         balance.creador=request.user
         balance.save()
-        balance=''
-        estadoResultados=''
-        if str(request.user) != 'AnonymousUser':
-            balance = BalanceGeneral.objects.filter(creador=request.user)
-            estadoResultados=EstadoResultados.objects.filter(creador=request.user)
-        contexto={
-        'listaBalance':balance,
-        'listaEstadoResultados':estadoResultados
-        }   
-        return render(request,'gestion/index.html',contexto)
+        return redirect('gestion:index')
 
 # eliminar balance
 @login_required
@@ -234,16 +216,7 @@ def eliminarBalance(request,pk):
         balance = BalanceGeneral.objects.get(id=request.POST['id'])
         balance.delete()
         #eliminamos el registro
-        balance=''
-        estadoResultados=''
-        if str(request.user) != 'AnonymousUser':
-            balance = BalanceGeneral.objects.filter(creador=request.user)
-            estadoResultados=EstadoResultados.objects.filter(creador=request.user)
-        contexto={
-        'listaBalance':balance,
-        'listaEstadoResultados':estadoResultados
-        }
-        return render(request,'gestion/index.html',contexto)
+        return redirect('gestion:index')
     
 
 
@@ -339,16 +312,7 @@ def crearEstadoResultados(request):
         estado.creador=request.user
         estado.save()
 
-        balance=''
-        estadoResultados=''
-        if str(request.user) != 'AnonymousUser':
-            balance = BalanceGeneral.objects.filter(creador=request.user)
-            estadoResultados=EstadoResultados.objects.filter(creador=request.user)
-        contexto={
-            'listaBalance':balance,
-            'listaEstadoResultados':estadoResultados
-        }
-        return render(request,'gestion/index.html',contexto)
+        return redirect('gestion:index')
     
 # obtener el detalle del balance
 @login_required
@@ -458,16 +422,7 @@ def actualizarEstadoResultados(request,pk):
 
         estado.save()
         #guardamos los cambios
-        balance=''
-        estadoResultados=''
-        if str(request.user) != 'AnonymousUser':
-            balance = BalanceGeneral.objects.filter(creador=request.user)
-            estadoResultados=EstadoResultados.objects.filter(creador=request.user)
-        contexto={
-            'listaBalance':balance,
-            'listaEstadoResultados':estadoResultados
-        }
-        return render(request,'gestion/index.html',contexto)
+        return redirect('gestion:index')
 
 # eliminar balance
 @login_required
@@ -488,16 +443,7 @@ def eliminarEstadoResultados(request,pk):
         balance.delete()
         #eliminamos el registro
 
-        balance=''
-        estadoResultados=''
-        if str(request.user) != 'AnonymousUser':
-            balance = BalanceGeneral.objects.filter(creador=request.user)
-            estadoResultados=EstadoResultados.objects.filter(creador=request.user)
-        contexto={
-            'listaBalance':balance,
-            'listaEstadoResultados':estadoResultados
-        }
-        return render(request,'gestion/index.html',contexto)
+        return redirect('gestion:index')
 
 
 
@@ -545,17 +491,7 @@ def factibilidad(request):
         #guardamos el registro
         empleado.save()
 
-        tipoEmpleado = TipoEmpleado.objects.all()
-        empleados = Empleado.objects.filter(creador=request.user)
-        suma=0.0
-        for a in empleados:
-            suma+=float(a.horas)*float(a.puesto.salario)
-        contexto={
-            'tp':tipoEmpleado,
-            'listaEmpleados':empleados,
-            'costoOperacion':suma
-        }
-        return render(request,'gestion/factibilidad.html',contexto)
+        return redirect('gestion:factibilidad')
 
 
 # ver el detalle del empleado
@@ -603,17 +539,7 @@ def actualizarEmpleado(request,pk):
         #guardamos la actualizacion
         empleado.save()
 
-        tipoEmpleado = TipoEmpleado.objects.all()
-        empleados = Empleado.objects.filter(creador=request.user)
-        suma=0.0
-        for a in empleados:
-            suma+=float(a.horas)*float(a.puesto.salario)
-        contexto={
-            'tp':tipoEmpleado,
-            'listaEmpleados':empleados,
-            'costoOperacion':suma
-        }
-        return render(request,'gestion/factibilidad.html',contexto)
+        return redirect('gestion:factibilidad')
 
 #eliminar un empleado
 @login_required
@@ -631,14 +557,5 @@ def eliminarEmpleado(request,pk):
     elif request.method == 'POST':
         empleado = Empleado.objects.get(pk=request.POST['id'])
         empleado.delete()
-        tipoEmpleado = TipoEmpleado.objects.all()
-        empleados = Empleado.objects.filter(creador=request.user)
-        suma=0.0
-        for a in empleados:
-            suma+=float(a.horas)*float(a.puesto.salario)
-        contexto={
-            'tp':tipoEmpleado,
-            'listaEmpleados':empleados,
-            'costoOperacion':suma
-        }
-        return render(request,'gestion/factibilidad.html',contexto)
+
+        return redirect('gestion:factibilidad')
